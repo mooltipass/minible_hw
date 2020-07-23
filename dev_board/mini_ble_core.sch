@@ -1,0 +1,1642 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 4 4
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L mini_ble:AT45DB011D U10
+U 1 1 59DBF4F1
+P 2050 7200
+F 0 "U10" H 1850 7450 60  0000 C CNN
+F 1 "AT45DB081E" H 2100 6950 60  0000 C CNN
+F 2 "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm" H 2100 7200 60  0001 C CNN
+F 3 "" H 2100 7200 60  0000 C CNN
+F 4 "https://www.digikey.com/product-detail/en/adesto-technologies/AT45DB081E-SSHN-T/1265-1085-1-ND/4425793" H 2050 7200 60  0001 C CNN "Field4"
+	1    2050 7200
+	1    0    0    -1  
+$EndComp
+$Comp
+L mini_ble:CON_SMARTCARD2 U12
+U 1 1 59DBF524
+P 6500 7050
+F 0 "U12" H 6250 7600 60  0000 C CNN
+F 1 "CON_SMARTCARD" H 6500 6500 60  0000 C CNN
+F 2 "footprints:CON_SMARTCARD_CLONE_91-90473-003A" H 5700 7650 60  0001 C CNN
+F 3 "" H 5700 7650 60  0000 C CNN
+	1    6500 7050
+	1    0    0    -1  
+$EndComp
+Text HLabel 4600 3700 0    60   Output ~ 0
+VOLED_1V2_EN
+Text HLabel 10400 1300 2    60   Output ~ 0
+VOLED_3V3_EN
+Text HLabel 10400 1400 2    60   Input ~ 0
+3V3_USB
+Text HLabel 2900 6000 2    60   Output ~ 0
+SWITCH_HIGH
+Text HLabel 2900 6100 2    60   Output ~ 0
+SWITCH_LOW
+Text HLabel 10400 2800 2    60   Output ~ 0
+SWDET_ENABLE
+Text HLabel 5000 4200 0    60   Input ~ 0
+AUX_TX
+Text HLabel 5000 4100 0    60   Output ~ 0
+AUX_RX
+Text HLabel 4600 3600 0    60   Output ~ 0
+BLE_EN
+$Comp
+L mini_ble:OLED_M01084 U14
+U 1 1 59DC26D0
+P 950 2350
+F 0 "U14" H 850 3650 60  0000 C CNN
+F 1 "OLED_M01084" H 950 1150 60  0000 C CNN
+F 2 "footprints:SCREEN_M01084" H 350 3700 60  0001 C CNN
+F 3 "" H 350 3700 60  0001 C CNN
+	1    950  2350
+	-1   0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR082
+U 1 1 59DC27C3
+P 1400 3550
+F 0 "#PWR082" H 1400 3300 50  0001 C CNN
+F 1 "GND" H 1400 3400 50  0000 C CNN
+F 2 "" H 1400 3550 50  0001 C CNN
+F 3 "" H 1400 3550 50  0001 C CNN
+	1    1400 3550
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3.3V #PWR085
+U 1 1 59DC310E
+P 2150 1050
+F 0 "#PWR085" H 2150 900 50  0001 C CNN
+F 1 "+3.3V" H 2150 1190 50  0000 C CNN
+F 2 "" H 2150 1050 50  0001 C CNN
+F 3 "" H 2150 1050 50  0001 C CNN
+	1    2150 1050
+	1    0    0    -1  
+$EndComp
+Text Label 1950 2750 2    60   ~ 0
+OLED_SCK
+Text Label 1950 2850 2    60   ~ 0
+OLED_DATA
+Text Label 1950 2450 2    60   ~ 0
+OLED_DnR
+Text Label 1950 2350 2    60   ~ 0
+OLED_nRES
+Text Label 1950 2250 2    60   ~ 0
+OLED_nCS
+$Comp
+L Device:C C34
+U 1 1 59DC3828
+P 2700 2200
+F 0 "C34" H 2725 2300 50  0000 L CNN
+F 1 "4.7uF" H 2725 2100 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 2738 2050 50  0001 C CNN
+F 3 "http://www.samsungsem.com/kr/support/product-search/mlcc/__icsFiles/afieldfile/2018/08/23/Data%20sheet_CL10A475KA8NQNC.pdf" H 2700 2200 50  0001 C CNN
+F 4 "https://www.digikey.com/product-detail/en/samsung-electro-mechanics-america-inc/CL10A475KA8NQNC/1276-1900-1-ND/3889986" H 2700 2200 60  0001 C CNN "Field4"
+	1    2700 2200
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R17
+U 1 1 59DC3B99
+P 2450 2200
+F 0 "R17" V 2530 2200 50  0000 C CNN
+F 1 "620k" V 2450 2200 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 2380 2200 50  0001 C CNN
+F 3 "" H 2450 2200 50  0001 C CNN
+F 4 "https://www.digikey.com/product-detail/en/yageo/RC0603FR-07620KL/311-620KHRCT-ND/730285" V 2450 2200 60  0001 C CNN "Field4"
+	1    2450 2200
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR087
+U 1 1 59DC3C2E
+P 2450 2400
+F 0 "#PWR087" H 2450 2150 50  0001 C CNN
+F 1 "GND" H 2450 2250 50  0000 C CNN
+F 2 "" H 2450 2400 50  0001 C CNN
+F 3 "" H 2450 2400 50  0001 C CNN
+	1    2450 2400
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR088
+U 1 1 59DC3C63
+P 2700 2400
+F 0 "#PWR088" H 2700 2150 50  0001 C CNN
+F 1 "GND" H 2700 2250 50  0000 C CNN
+F 2 "" H 2700 2400 50  0001 C CNN
+F 3 "" H 2700 2400 50  0001 C CNN
+	1    2700 2400
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C33
+U 1 1 59DC3E14
+P 2150 2200
+F 0 "C33" H 2175 2300 50  0000 L CNN
+F 1 "4.7uF" H 2175 2100 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 2188 2050 50  0001 C CNN
+F 3 "http://www.samsungsem.com/kr/support/product-search/mlcc/__icsFiles/afieldfile/2018/08/23/Data%20sheet_CL10A475KA8NQNC.pdf" H 2150 2200 50  0001 C CNN
+F 4 "https://www.digikey.com/product-detail/en/samsung-electro-mechanics-america-inc/CL10A475KA8NQNC/1276-1900-1-ND/3889986" H 2150 2200 60  0001 C CNN "Field4"
+	1    2150 2200
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR086
+U 1 1 59DC3E1A
+P 2150 2400
+F 0 "#PWR086" H 2150 2150 50  0001 C CNN
+F 1 "GND" H 2150 2250 50  0000 C CNN
+F 2 "" H 2150 2400 50  0001 C CNN
+F 3 "" H 2150 2400 50  0001 C CNN
+	1    2150 2400
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C35
+U 1 1 59DC3E64
+P 2950 2200
+F 0 "C35" H 2975 2300 50  0000 L CNN
+F 1 "4.7uF" H 2975 2100 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 2988 2050 50  0001 C CNN
+F 3 "http://www.samsungsem.com/kr/support/product-search/mlcc/__icsFiles/afieldfile/2018/08/23/Data%20sheet_CL10A475KA8NQNC.pdf" H 2950 2200 50  0001 C CNN
+F 4 "https://www.digikey.com/product-detail/en/samsung-electro-mechanics-america-inc/CL10A475KA8NQNC/1276-1900-1-ND/3889986" H 2950 2200 60  0001 C CNN "Field4"
+	1    2950 2200
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR089
+U 1 1 59DC3E6A
+P 2950 2400
+F 0 "#PWR089" H 2950 2150 50  0001 C CNN
+F 1 "GND" H 2950 2250 50  0000 C CNN
+F 2 "" H 2950 2400 50  0001 C CNN
+F 3 "" H 2950 2400 50  0001 C CNN
+	1    2950 2400
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C36
+U 1 1 59DC3EF8
+P 3200 2200
+F 0 "C36" H 3225 2300 50  0000 L CNN
+F 1 "4.7uF" H 3225 2100 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 3238 2050 50  0001 C CNN
+F 3 "http://www.samsungsem.com/kr/support/product-search/mlcc/__icsFiles/afieldfile/2018/08/23/Data%20sheet_CL10A475KA8NQNC.pdf" H 3200 2200 50  0001 C CNN
+F 4 "https://www.digikey.com/product-detail/en/samsung-electro-mechanics-america-inc/CL10A475KA8NQNC/1276-1900-1-ND/3889986" H 3200 2200 60  0001 C CNN "Field4"
+	1    3200 2200
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR090
+U 1 1 59DC3EFE
+P 3200 2400
+F 0 "#PWR090" H 3200 2150 50  0001 C CNN
+F 1 "GND" H 3200 2250 50  0000 C CNN
+F 2 "" H 3200 2400 50  0001 C CNN
+F 3 "" H 3200 2400 50  0001 C CNN
+	1    3200 2400
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C37
+U 1 1 59DC3F06
+P 3450 2200
+F 0 "C37" H 3475 2300 50  0000 L CNN
+F 1 "4.7uF" H 3475 2100 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 3488 2050 50  0001 C CNN
+F 3 "http://www.samsungsem.com/kr/support/product-search/mlcc/__icsFiles/afieldfile/2018/08/23/Data%20sheet_CL10A475KA8NQNC.pdf" H 3450 2200 50  0001 C CNN
+F 4 "https://www.digikey.com/product-detail/en/samsung-electro-mechanics-america-inc/CL10A475KA8NQNC/1276-1900-1-ND/3889986" H 3450 2200 60  0001 C CNN "Field4"
+	1    3450 2200
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR092
+U 1 1 59DC3F0C
+P 3450 2400
+F 0 "#PWR092" H 3450 2150 50  0001 C CNN
+F 1 "GND" H 3450 2250 50  0000 C CNN
+F 2 "" H 3450 2400 50  0001 C CNN
+F 3 "" H 3450 2400 50  0001 C CNN
+	1    3450 2400
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C38
+U 1 1 59DC531E
+P 950 7200
+F 0 "C38" H 975 7300 50  0000 L CNN
+F 1 "100nF" H 975 7100 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 988 7050 50  0001 C CNN
+F 3 "" H 950 7200 50  0001 C CNN
+F 4 "https://www.digikey.com/product-detail/en/samsung-electro-mechanics-america-inc/CL10B104KB8NNNC/1276-1000-1-ND/3889086" H 950 7200 60  0001 C CNN "Field4"
+	1    950  7200
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR078
+U 1 1 59DC53E1
+P 950 7450
+F 0 "#PWR078" H 950 7200 50  0001 C CNN
+F 1 "GND" H 950 7300 50  0000 C CNN
+F 2 "" H 950 7450 50  0001 C CNN
+F 3 "" H 950 7450 50  0001 C CNN
+	1    950  7450
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3.3V #PWR077
+U 1 1 59DC544F
+P 950 6950
+F 0 "#PWR077" H 950 6800 50  0001 C CNN
+F 1 "+3.3V" H 950 7090 50  0000 C CNN
+F 2 "" H 950 6950 50  0001 C CNN
+F 3 "" H 950 6950 50  0001 C CNN
+	1    950  6950
+	1    0    0    -1  
+$EndComp
+$Comp
+L mini_ble:LIS2HH12 U15
+U 1 1 59DC6CA0
+P 2150 4750
+F 0 "U15" H 1750 5100 60  0000 C CNN
+F 1 "LIS2HH12" H 2150 4400 60  0000 C CNN
+F 2 "footprints:LGA-12" H 2150 4750 60  0001 C CNN
+F 3 "" H 2150 4750 60  0000 C CNN
+F 4 "https://www.digikey.com/product-detail/en/stmicroelectronics/LIS2HH12TR/497-15069-1-ND/5043075" H 2150 4750 60  0001 C CNN "Field4"
+	1    2150 4750
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Device:C C40
+U 1 1 59DC733C
+P 1250 4750
+F 0 "C40" H 1275 4850 50  0000 L CNN
+F 1 "100nF" H 1275 4650 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 1288 4600 50  0001 C CNN
+F 3 "" H 1250 4750 50  0001 C CNN
+F 4 "https://www.digikey.com/product-detail/en/samsung-electro-mechanics-america-inc/CL10B104KB8NNNC/1276-1000-1-ND/3889086" H 1250 4750 60  0001 C CNN "Field4"
+	1    1250 4750
+	-1   0    0    -1  
+$EndComp
+NoConn ~ 2800 5000
+Text Label 3350 4500 2    60   ~ 0
+ACC_SCK
+Text Label 3350 4600 2    60   ~ 0
+ACC_SS
+Text Label 3350 4700 2    60   ~ 0
+ACC_MISO
+Text Label 3350 4800 2    60   ~ 0
+ACC_MOSI
+Text Label 3350 4900 2    60   ~ 0
+ACC_INT
+Text Notes 1700 650  0    60   ~ 0
+OLED SCREEN
+Text Notes 1800 4050 0    60   ~ 0
+ACCELEROMETER
+Text Notes 2050 5450 0    60   ~ 0
+WHEEL
+Text Label 2750 5800 2    60   ~ 0
+ENC_A
+Text Label 2750 5900 2    60   ~ 0
+ENC_B
+Text Label 2750 6000 2    60   ~ 0
+ENC_SW
+Text Label 10400 2700 2    60   ~ 0
+OLED_nCS
+Text Label 10400 2600 2    60   ~ 0
+OLED_nRES
+Text Label 10400 2500 2    60   ~ 0
+OLED_DnR
+Text Label 4600 4000 0    60   ~ 0
+OLED_SCK
+Text Label 4600 3900 0    60   ~ 0
+OLED_DATA
+Text Label 10400 2000 2    60   ~ 0
+ACC_SCK
+Text Label 10400 1900 2    60   ~ 0
+ACC_SS
+Text Label 10400 1800 2    60   ~ 0
+ACC_MISO
+Text Label 10400 1700 2    60   ~ 0
+ACC_MOSI
+Text Label 4600 3800 0    60   ~ 0
+ACC_INT
+Text Label 10400 3900 2    60   ~ 0
+ENC_A
+Text Label 4600 3500 0    60   ~ 0
+ENC_B
+Text Label 10400 4000 2    60   ~ 0
+ENC_SW
+$Comp
+L power:GND #PWR084
+U 1 1 59DCA796
+P 1400 7450
+F 0 "#PWR084" H 1400 7200 50  0001 C CNN
+F 1 "GND" H 1400 7300 50  0000 C CNN
+F 2 "" H 1400 7450 50  0001 C CNN
+F 3 "" H 1400 7450 50  0001 C CNN
+	1    1400 7450
+	-1   0    0    -1  
+$EndComp
+$Comp
+L power:+3.3V #PWR083
+U 1 1 59DCA816
+P 1400 6950
+F 0 "#PWR083" H 1400 6800 50  0001 C CNN
+F 1 "+3.3V" H 1400 7090 50  0000 C CNN
+F 2 "" H 1400 6950 50  0001 C CNN
+F 3 "" H 1400 6950 50  0001 C CNN
+	1    1400 6950
+	1    0    0    -1  
+$EndComp
+Text Notes 1900 6600 0    60   ~ 0
+USER FLASH
+Text Label 3450 7050 2    60   ~ 0
+DB_FLASH_nCS
+Text Label 3450 7150 2    60   ~ 0
+DB_FLASH_SCK
+Text Label 3450 7250 2    60   ~ 0
+DB_FLASH_MOSI
+Text Label 3450 7350 2    60   ~ 0
+DB_FLASH_MISO
+Text Label 10400 2900 2    60   ~ 0
+DB_FLASH_nCS
+Text Label 10400 3000 2    60   ~ 0
+DB_FLASH_SCK
+Text Label 10400 3200 2    60   ~ 0
+DB_FLASH_MOSI
+Text Label 10400 3100 2    60   ~ 0
+DB_FLASH_MISO
+$Comp
+L Device:Q_PMOS_GSD Q6
+U 1 1 59DCC131
+P 4600 6700
+F 0 "Q6" H 4150 6650 50  0000 L CNN
+F 1 "SI1013X" H 4150 6750 50  0000 L CNN
+F 2 "footprints:SC89" H 4800 6800 50  0001 C CNN
+F 3 "" H 4600 6700 50  0001 C CNN
+F 4 "https://www.digikey.com/product-detail/en/vishay-siliconix/SI1013X-T1-GE3/SI1013X-T1-GE3CT-ND/1995592" H 4600 6700 60  0001 C CNN "Field4"
+	1    4600 6700
+	0    1    -1   0   
+$EndComp
+$Comp
+L power:+3.3V #PWR096
+U 1 1 59DCCD8B
+P 4150 6550
+F 0 "#PWR096" H 4150 6400 50  0001 C CNN
+F 1 "+3.3V" H 4150 6690 50  0000 C CNN
+F 2 "" H 4150 6550 50  0001 C CNN
+F 3 "" H 4150 6550 50  0001 C CNN
+	1    4150 6550
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Device:C C41
+U 1 1 59DCCE2D
+P 4150 6800
+F 0 "C41" H 4175 6900 50  0000 L CNN
+F 1 "100nF" H 4175 6700 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 4188 6650 50  0001 C CNN
+F 3 "" H 4150 6800 50  0001 C CNN
+F 4 "https://www.digikey.com/product-detail/en/samsung-electro-mechanics-america-inc/CL10B104KB8NNNC/1276-1000-1-ND/3889086" H 4150 6800 60  0001 C CNN "Field4"
+	1    4150 6800
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR097
+U 1 1 59DCCF50
+P 4150 7000
+F 0 "#PWR097" H 4150 6750 50  0001 C CNN
+F 1 "GND" H 4150 6850 50  0000 C CNN
+F 2 "" H 4150 7000 50  0001 C CNN
+F 3 "" H 4150 7000 50  0001 C CNN
+	1    4150 7000
+	1    0    0    -1  
+$EndComp
+Text Label 10400 3800 2    60   ~ 0
+SMC_POW_nEN
+$Comp
+L Device:C C42
+U 1 1 59DCDC4A
+P 4950 6800
+F 0 "C42" H 4975 6900 50  0000 L CNN
+F 1 "100nF" H 4975 6700 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 4988 6650 50  0001 C CNN
+F 3 "" H 4950 6800 50  0001 C CNN
+F 4 "https://www.digikey.com/product-detail/en/samsung-electro-mechanics-america-inc/CL10B104KB8NNNC/1276-1000-1-ND/3889086" H 4950 6800 60  0001 C CNN "Field4"
+	1    4950 6800
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0100
+U 1 1 59DCDCAD
+P 4950 7000
+F 0 "#PWR0100" H 4950 6750 50  0001 C CNN
+F 1 "GND" H 4950 6850 50  0000 C CNN
+F 2 "" H 4950 7000 50  0001 C CNN
+F 3 "" H 4950 7000 50  0001 C CNN
+	1    4950 7000
+	1    0    0    -1  
+$EndComp
+Text Label 5250 6700 0    60   ~ 0
+SMC_RST
+Text Label 10400 3700 2    60   ~ 0
+SMC_RST
+Text Label 5250 6800 0    60   ~ 0
+SMC_SCK
+Text Label 10400 2200 2    60   ~ 0
+SMC_SCK
+$Comp
+L power:GND #PWR0107
+U 1 1 59DCE30E
+P 5800 7600
+F 0 "#PWR0107" H 5800 7350 50  0001 C CNN
+F 1 "GND" H 5800 7450 50  0000 C CNN
+F 2 "" H 5800 7600 50  0001 C CNN
+F 3 "" H 5800 7600 50  0001 C CNN
+	1    5800 7600
+	1    0    0    -1  
+$EndComp
+NoConn ~ 5900 7100
+Text Label 5250 7300 0    60   ~ 0
+SMC_PGM
+Text Label 5250 7400 0    60   ~ 0
+SMC_DET
+Text Label 10400 2100 2    60   ~ 0
+SMC_PGM
+Text Label 10400 1600 2    60   ~ 0
+SMC_DET
+$Comp
+L Device:Q_NMOS_GSD Q7
+U 1 1 59DCF66F
+P 5400 5950
+F 0 "Q7" H 5600 6000 50  0000 L CNN
+F 1 "DMN1019USN" H 5600 5900 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SC-59" H 5600 6050 50  0001 C CNN
+F 3 "" H 5400 5950 50  0001 C CNN
+F 4 "https://www.digikey.com/product-detail/en/diodes-incorporated/DMN1019USN-7/DMN1019USN-7DICT-ND/4898886" H 5400 5950 60  0001 C CNN "Field4"
+	1    5400 5950
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0105
+U 1 1 59DCFA52
+P 5500 6200
+F 0 "#PWR0105" H 5500 5950 50  0001 C CNN
+F 1 "GND" H 5500 6050 50  0000 C CNN
+F 2 "" H 5500 6200 50  0001 C CNN
+F 3 "" H 5500 6200 50  0001 C CNN
+	1    5500 6200
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R20
+U 1 1 59DCFE67
+P 5050 5700
+F 0 "R20" V 5130 5700 50  0000 C CNN
+F 1 "2k2" V 5050 5700 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 4980 5700 50  0001 C CNN
+F 3 "" H 5050 5700 50  0001 C CNN
+F 4 "https://www.digikey.com/product-detail/en/yageo/RC0603FR-072K2L/311-2.20KHRCT-ND/729963" V 5050 5700 60  0001 C CNN "Field4"
+	1    5050 5700
+	0    -1   -1   0   
+$EndComp
+$Comp
+L power:+3.3V #PWR093
+U 1 1 59DCFFEE
+P 4050 5650
+F 0 "#PWR093" H 4050 5500 50  0001 C CNN
+F 1 "+3.3V" H 4050 5790 50  0000 C CNN
+F 2 "" H 4050 5650 50  0001 C CNN
+F 3 "" H 4050 5650 50  0001 C CNN
+	1    4050 5650
+	-1   0    0    -1  
+$EndComp
+Text Label 4700 5950 0    60   ~ 0
+SMC_MOSI
+Text Label 6800 5700 2    60   ~ 0
+SMC_MISO
+Text Notes 5100 5450 0    60   ~ 0
+SMARTCARD
+Text Label 10400 2400 2    60   ~ 0
+SMC_MOSI
+Text Label 10400 2300 2    60   ~ 0
+SMC_MISO
+$Comp
+L Device:C C43
+U 1 1 59DC3332
+P 10050 6050
+F 0 "C43" H 10075 6150 50  0000 L CNN
+F 1 "100nF" H 10075 5950 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 10088 5900 50  0001 C CNN
+F 3 "" H 10050 6050 50  0001 C CNN
+F 4 "https://www.digikey.com/product-detail/en/samsung-electro-mechanics-america-inc/CL10B104KB8NNNC/1276-1000-1-ND/3889086" H 10050 6050 60  0001 C CNN "Field4"
+	1    10050 6050
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0117
+U 1 1 59DC3338
+P 10050 6250
+F 0 "#PWR0117" H 10050 6000 50  0001 C CNN
+F 1 "GND" H 10050 6100 50  0000 C CNN
+F 2 "" H 10050 6250 50  0001 C CNN
+F 3 "" H 10050 6250 50  0001 C CNN
+	1    10050 6250
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3.3V #PWR0116
+U 1 1 59DC333E
+P 10050 5850
+F 0 "#PWR0116" H 10050 5700 50  0001 C CNN
+F 1 "+3.3V" H 10050 5990 50  0000 C CNN
+F 2 "" H 10050 5850 50  0001 C CNN
+F 3 "" H 10050 5850 50  0001 C CNN
+	1    10050 5850
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3.3V #PWR0114
+U 1 1 59DC3372
+P 9600 5850
+F 0 "#PWR0114" H 9600 5700 50  0001 C CNN
+F 1 "+3.3V" H 9600 5990 50  0000 C CNN
+F 2 "" H 9600 5850 50  0001 C CNN
+F 3 "" H 9600 5850 50  0001 C CNN
+	1    9600 5850
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0115
+U 1 1 59DC33EB
+P 9600 6250
+F 0 "#PWR0115" H 9600 6000 50  0001 C CNN
+F 1 "GND" H 9600 6100 50  0000 C CNN
+F 2 "" H 9600 6250 50  0001 C CNN
+F 3 "" H 9600 6250 50  0001 C CNN
+	1    9600 6250
+	1    0    0    -1  
+$EndComp
+Text Label 7650 5900 0    60   ~ 0
+DATA_FLASH_nCS
+Text Label 7650 6000 0    60   ~ 0
+DATA_FLASH_SCK
+Text Label 7650 6200 0    60   ~ 0
+DATA_FLASH_MOSI
+Text Label 7650 6100 0    60   ~ 0
+DATA_FLASH_MISO
+Text Notes 8800 5450 0    60   ~ 0
+DATA FLASH
+Text Label 10400 3600 2    60   ~ 0
+DATA_FLASH_nCS
+Text Label 10400 3400 2    60   ~ 0
+DATA_FLASH_SCK
+Text Label 10400 3300 2    60   ~ 0
+DATA_FLASH_MOSI
+Text Label 10400 3500 2    60   ~ 0
+DATA_FLASH_MISO
+$Comp
+L mini_ble:SAMD21G18A-MU U17
+U 1 1 59DEE541
+P 7450 2750
+F 0 "U17" H 5800 4400 50  0000 C CNN
+F 1 "SAMD21G18A-MU" H 8900 1100 50  0000 C CNN
+F 2 "Package_DFN_QFN:QFN-48-1EP_7x7mm_P0.5mm_EP5.3x5.3mm" H 7450 1600 50  0001 C CIN
+F 3 "" H 7450 3000 50  0001 C CNN
+F 4 "https://www.digikey.com/product-detail/en/microchip-technology/ATSAMD21G18A-MUT/ATSAMD21G18A-MUTCT-ND/4878880" H 7450 2750 60  0001 C CNN "Field4"
+	1    7450 2750
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C47
+U 1 1 59DEEA15
+P 5050 2000
+F 0 "C47" H 5075 2100 50  0000 L CNN
+F 1 "1uF/25V" H 5075 1900 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 5088 1850 50  0001 C CNN
+F 3 "https://media.digikey.com/pdf/Data%20Sheets/Samsung%20PDFs/CL10B105KA8NNNC_char.pdf" H 5050 2000 50  0001 C CNN
+F 4 "https://www.digikey.com/product-detail/en/samsung-electro-mechanics-america-inc/CL10B105KA8NNNC/1276-1184-1-ND/3889270" H 5050 2000 60  0001 C CNN "Field4"
+	1    5050 2000
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Device:C C48
+U 1 1 59DEECF4
+P 5450 2300
+F 0 "C48" H 5475 2400 50  0000 L CNN
+F 1 "100nF" H 5475 2200 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 5488 2150 50  0001 C CNN
+F 3 "" H 5450 2300 50  0001 C CNN
+F 4 "https://www.digikey.com/product-detail/en/samsung-electro-mechanics-america-inc/CL10B104KB8NNNC/1276-1000-1-ND/3889086" H 5450 2300 60  0001 C CNN "Field4"
+	1    5450 2300
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0109
+U 1 1 59DEEF2E
+P 7150 4550
+F 0 "#PWR0109" H 7150 4300 50  0001 C CNN
+F 1 "GND" H 7150 4400 50  0000 C CNN
+F 2 "" H 7150 4550 50  0001 C CNN
+F 3 "" H 7150 4550 50  0001 C CNN
+	1    7150 4550
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0110
+U 1 1 59DEEFCF
+P 7250 4550
+F 0 "#PWR0110" H 7250 4300 50  0001 C CNN
+F 1 "GND" H 7250 4400 50  0000 C CNN
+F 2 "" H 7250 4550 50  0001 C CNN
+F 3 "" H 7250 4550 50  0001 C CNN
+	1    7250 4550
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0111
+U 1 1 59DEF025
+P 7350 4550
+F 0 "#PWR0111" H 7350 4300 50  0001 C CNN
+F 1 "GND" H 7350 4400 50  0000 C CNN
+F 2 "" H 7350 4550 50  0001 C CNN
+F 3 "" H 7350 4550 50  0001 C CNN
+	1    7350 4550
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0112
+U 1 1 59DEF07B
+P 7450 4550
+F 0 "#PWR0112" H 7450 4300 50  0001 C CNN
+F 1 "GND" H 7450 4400 50  0000 C CNN
+F 2 "" H 7450 4550 50  0001 C CNN
+F 3 "" H 7450 4550 50  0001 C CNN
+	1    7450 4550
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0113
+U 1 1 59DEF0D1
+P 7700 4550
+F 0 "#PWR0113" H 7700 4300 50  0001 C CNN
+F 1 "GND" H 7700 4400 50  0000 C CNN
+F 2 "" H 7700 4550 50  0001 C CNN
+F 3 "" H 7700 4550 50  0001 C CNN
+	1    7700 4550
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0101
+U 1 1 59DF055E
+P 5050 2200
+F 0 "#PWR0101" H 5050 1950 50  0001 C CNN
+F 1 "GND" H 5050 2050 50  0000 C CNN
+F 2 "" H 5050 2200 50  0001 C CNN
+F 3 "" H 5050 2200 50  0001 C CNN
+	1    5050 2200
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0104
+U 1 1 59DF09C4
+P 5450 2500
+F 0 "#PWR0104" H 5450 2250 50  0001 C CNN
+F 1 "GND" H 5450 2350 50  0000 C CNN
+F 2 "" H 5450 2500 50  0001 C CNN
+F 3 "" H 5450 2500 50  0001 C CNN
+	1    5450 2500
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C46
+U 1 1 59DF0E87
+P 4700 1550
+F 0 "C46" H 4725 1650 50  0000 L CNN
+F 1 "100nF" H 4725 1450 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 4738 1400 50  0001 C CNN
+F 3 "" H 4700 1550 50  0001 C CNN
+F 4 "https://www.digikey.com/product-detail/en/samsung-electro-mechanics-america-inc/CL10B104KB8NNNC/1276-1000-1-ND/3889086" H 4700 1550 60  0001 C CNN "Field4"
+	1    4700 1550
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR099
+U 1 1 59DF0F12
+P 4700 1750
+F 0 "#PWR099" H 4700 1500 50  0001 C CNN
+F 1 "GND" H 4700 1600 50  0000 C CNN
+F 2 "" H 4700 1750 50  0001 C CNN
+F 3 "" H 4700 1750 50  0001 C CNN
+	1    4700 1750
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C45
+U 1 1 59DF0FA0
+P 4400 1550
+F 0 "C45" H 4425 1650 50  0000 L CNN
+F 1 "100nF" H 4425 1450 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 4438 1400 50  0001 C CNN
+F 3 "" H 4400 1550 50  0001 C CNN
+F 4 "https://www.digikey.com/product-detail/en/samsung-electro-mechanics-america-inc/CL10B104KB8NNNC/1276-1000-1-ND/3889086" H 4400 1550 60  0001 C CNN "Field4"
+	1    4400 1550
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR098
+U 1 1 59DF100E
+P 4400 1750
+F 0 "#PWR098" H 4400 1500 50  0001 C CNN
+F 1 "GND" H 4400 1600 50  0000 C CNN
+F 2 "" H 4400 1750 50  0001 C CNN
+F 3 "" H 4400 1750 50  0001 C CNN
+	1    4400 1750
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C44
+U 1 1 59DF126C
+P 4100 1550
+F 0 "C44" H 4125 1650 50  0000 L CNN
+F 1 "100nF" H 4125 1450 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 4138 1400 50  0001 C CNN
+F 3 "" H 4100 1550 50  0001 C CNN
+F 4 "https://www.digikey.com/product-detail/en/samsung-electro-mechanics-america-inc/CL10B104KB8NNNC/1276-1000-1-ND/3889086" H 4100 1550 60  0001 C CNN "Field4"
+	1    4100 1550
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR095
+U 1 1 59DF12DD
+P 4100 1750
+F 0 "#PWR095" H 4100 1500 50  0001 C CNN
+F 1 "GND" H 4100 1600 50  0000 C CNN
+F 2 "" H 4100 1750 50  0001 C CNN
+F 3 "" H 4100 1750 50  0001 C CNN
+	1    4100 1750
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3.3V #PWR094
+U 1 1 59DF1B4F
+P 4100 700
+F 0 "#PWR094" H 4100 550 50  0001 C CNN
+F 1 "+3.3V" H 4100 840 50  0000 C CNN
+F 2 "" H 4100 700 50  0001 C CNN
+F 3 "" H 4100 700 50  0001 C CNN
+	1    4100 700 
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R21
+U 1 1 59DF1E2C
+P 5250 3100
+F 0 "R21" V 5330 3100 50  0000 C CNN
+F 1 "10k" V 5250 3100 50  0000 C CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" V 5180 3100 50  0001 C CNN
+F 3 "" H 5250 3100 50  0001 C CNN
+F 4 "https://www.digikey.com/product-detail/en/yageo/AC0402FR-0710KL/YAG3436CT-ND/6006285" V 5250 3100 60  0001 C CNN "Field4"
+	1    5250 3100
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:R R19
+U 1 1 59E24EF7
+P 4600 7450
+F 0 "R19" V 4680 7450 50  0000 C CNN
+F 1 "10k" V 4600 7450 50  0000 C CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" V 4530 7450 50  0001 C CNN
+F 3 "" H 4600 7450 50  0001 C CNN
+F 4 "https://www.digikey.com/product-detail/en/yageo/AC0402FR-0710KL/YAG3436CT-ND/6006285" V 4600 7450 60  0001 C CNN "Field4"
+	1    4600 7450
+	-1   0    0    1   
+$EndComp
+Text Notes 4150 4250 0    60   ~ 0
+SERCOM5
+Text Notes 10550 3250 1    60   ~ 0
+~SERCOM1
+$Comp
+L power:GND #PWR080
+U 1 1 59E68289
+P 1250 5050
+F 0 "#PWR080" H 1250 4800 50  0001 C CNN
+F 1 "GND" H 1250 4900 50  0000 C CNN
+F 2 "" H 1250 5050 50  0001 C CNN
+F 3 "" H 1250 5050 50  0001 C CNN
+	1    1250 5050
+	-1   0    0    -1  
+$EndComp
+$Comp
+L power:+3.3V #PWR079
+U 1 1 59E6837C
+P 1250 4450
+F 0 "#PWR079" H 1250 4300 50  0001 C CNN
+F 1 "+3.3V" H 1250 4590 50  0000 C CNN
+F 2 "" H 1250 4450 50  0001 C CNN
+F 3 "" H 1250 4450 50  0001 C CNN
+	1    1250 4450
+	-1   0    0    -1  
+$EndComp
+Text Label 3900 7700 0    60   ~ 0
+SMC_POW_nEN
+Text Label 4900 3300 0    60   ~ 0
+~RST
+$Comp
+L power:+8V #PWR091
+U 1 1 5A4B8CAB
+P 3450 1050
+F 0 "#PWR091" H 3450 900 50  0001 C CNN
+F 1 "+8V" H 3450 1190 50  0000 C CNN
+F 2 "" H 3450 1050 50  0001 C CNN
+F 3 "" H 3450 1050 50  0001 C CNN
+	1    3450 1050
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:Q_PMOS_GSD Q1
+U 1 1 5AE5BFBB
+P 4500 5800
+F 0 "Q1" H 4050 5750 50  0000 L CNN
+F 1 "SI1013X" H 4050 5850 50  0000 L CNN
+F 2 "footprints:SC89" H 4700 5900 50  0001 C CNN
+F 3 "" H 4500 5800 50  0001 C CNN
+F 4 "https://www.digikey.com/product-detail/en/vishay-siliconix/SI1013X-T1-GE3/SI1013X-T1-GE3CT-ND/1995592" H 4500 5800 60  0001 C CNN "Field4"
+	1    4500 5800
+	0    1    -1   0   
+$EndComp
+Text Label 5250 7200 0    60   ~ 0
+SMC_MISO
+$Comp
+L Device:D_Zener D2
+U 1 1 5AE5D51D
+P 6250 6000
+F 0 "D2" H 6250 6100 50  0000 C CNN
+F 1 "Zener 3.3V" H 6250 5900 50  0000 C CNN
+F 2 "Diode_SMD:D_SOD-523" H 6250 6000 50  0001 C CNN
+F 3 "" H 6250 6000 50  0001 C CNN
+F 4 "https://www.digikey.com/product-detail/en/comchip-technology/CPDH3V3UP-HF/641-1486-1-ND/4171834" H 6250 6000 60  0001 C CNN "Field4"
+	1    6250 6000
+	0    1    1    0   
+$EndComp
+$Comp
+L power:GND #PWR0108
+U 1 1 5AE5D5D0
+P 6250 6200
+F 0 "#PWR0108" H 6250 5950 50  0001 C CNN
+F 1 "GND" H 6250 6050 50  0000 C CNN
+F 2 "" H 6250 6200 50  0001 C CNN
+F 3 "" H 6250 6200 50  0001 C CNN
+	1    6250 6200
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:D_Zener D1
+U 1 1 5AE5FEFF
+P 5450 7550
+F 0 "D1" H 5450 7650 50  0000 C CNN
+F 1 "Zener 3.3V" H 5450 7450 50  0000 C CNN
+F 2 "Diode_SMD:D_SOD-523" H 5450 7550 50  0001 C CNN
+F 3 "" H 5450 7550 50  0001 C CNN
+F 4 "https://www.digikey.com/product-detail/en/comchip-technology/CPDH3V3UP-HF/641-1486-1-ND/4171834" H 5450 7550 60  0001 C CNN "Field4"
+	1    5450 7550
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	5350 6950 5200 6950
+Connection ~ 6250 5700
+Wire Wire Line
+	6250 5700 6250 5850
+Wire Wire Line
+	6250 6200 6250 6150
+Connection ~ 4600 7250
+Wire Wire Line
+	4500 6300 4500 6000
+Wire Wire Line
+	3900 6300 4500 6300
+Wire Wire Line
+	3900 7250 3900 6300
+Wire Wire Line
+	4600 7250 3900 7250
+Wire Wire Line
+	4700 5700 4900 5700
+Wire Wire Line
+	4300 5700 4050 5700
+Wire Wire Line
+	9300 3300 10400 3300
+Wire Wire Line
+	10400 3400 9300 3400
+Wire Wire Line
+	9300 3500 10400 3500
+Wire Wire Line
+	10400 3600 9300 3600
+Wire Wire Line
+	5000 4100 5600 4100
+Wire Wire Line
+	5600 4200 5000 4200
+Wire Wire Line
+	10400 1600 9550 1600
+Connection ~ 1250 5000
+Wire Wire Line
+	1250 4500 1450 4500
+Wire Wire Line
+	1250 5000 1450 5000
+Wire Wire Line
+	10400 1700 9300 1700
+Wire Wire Line
+	9300 1800 10400 1800
+Wire Wire Line
+	10400 1900 9300 1900
+Wire Wire Line
+	9300 2000 10400 2000
+Wire Wire Line
+	10400 2100 9300 2100
+Connection ~ 5250 3300
+Wire Wire Line
+	5250 3300 5250 3250
+Wire Wire Line
+	4900 3300 5250 3300
+Connection ~ 4100 1300
+Connection ~ 4700 1300
+Wire Wire Line
+	4700 1300 4700 1400
+Connection ~ 4400 1300
+Wire Wire Line
+	4400 1400 4400 1300
+Connection ~ 5450 1300
+Wire Wire Line
+	4100 1200 4100 1300
+Connection ~ 5450 1400
+Wire Wire Line
+	5600 1400 5450 1400
+Wire Wire Line
+	5450 1500 5600 1500
+Wire Wire Line
+	5450 1300 5450 1400
+Wire Wire Line
+	4100 1300 4400 1300
+Wire Wire Line
+	4700 1750 4700 1700
+Wire Wire Line
+	4400 1700 4400 1750
+Wire Wire Line
+	4100 1750 4100 1700
+Wire Wire Line
+	5450 2500 5450 2450
+Connection ~ 5450 2100
+Wire Wire Line
+	5600 2100 5450 2100
+Wire Wire Line
+	5050 2150 5050 2200
+Wire Wire Line
+	5050 1800 5050 1850
+Wire Wire Line
+	5600 1800 5050 1800
+Wire Wire Line
+	7700 4550 7700 4500
+Wire Wire Line
+	7450 4500 7450 4550
+Wire Wire Line
+	7350 4550 7350 4500
+Wire Wire Line
+	7250 4500 7250 4550
+Wire Wire Line
+	7150 4550 7150 4500
+Wire Wire Line
+	8650 6200 7650 6200
+Wire Wire Line
+	8650 6100 7650 6100
+Wire Wire Line
+	8650 6000 7650 6000
+Wire Wire Line
+	8650 5900 7650 5900
+Wire Wire Line
+	9600 5900 9600 5850
+Wire Wire Line
+	9550 5900 9600 5900
+Wire Wire Line
+	9600 6200 9600 6250
+Wire Wire Line
+	9550 6200 9600 6200
+Wire Wire Line
+	10050 6200 10050 6250
+Wire Wire Line
+	10050 5850 10050 5900
+Wire Notes Line
+	6950 5300 6950 6550
+Connection ~ 5500 5700
+Wire Wire Line
+	5200 5950 4700 5950
+Wire Wire Line
+	5500 5700 5500 5750
+Wire Wire Line
+	5200 5700 5500 5700
+Wire Wire Line
+	4050 5700 4050 5650
+Wire Wire Line
+	5500 6200 5500 6150
+Connection ~ 5800 7500
+Wire Wire Line
+	5900 7000 5800 7000
+Wire Wire Line
+	5250 7200 5900 7200
+Wire Wire Line
+	5900 7400 5250 7400
+Wire Wire Line
+	5800 7000 5800 7500
+Wire Wire Line
+	5900 7500 5800 7500
+Wire Wire Line
+	5900 6700 5250 6700
+Connection ~ 5800 6600
+Wire Wire Line
+	5800 6600 5800 6900
+Wire Wire Line
+	5800 6900 5900 6900
+Connection ~ 4950 6600
+Wire Wire Line
+	4950 6650 4950 6600
+Wire Wire Line
+	4800 6600 4950 6600
+Wire Wire Line
+	4950 7000 4950 6950
+Connection ~ 4150 6600
+Wire Wire Line
+	4150 6550 4150 6600
+Wire Wire Line
+	4400 6600 4150 6600
+Wire Wire Line
+	4150 7000 4150 6950
+Wire Wire Line
+	4600 6900 4600 7250
+Wire Wire Line
+	4600 7600 4600 7700
+Wire Wire Line
+	3450 7350 2650 7350
+Wire Wire Line
+	2650 7250 3450 7250
+Wire Wire Line
+	3450 7150 2650 7150
+Wire Wire Line
+	2650 7050 3450 7050
+Connection ~ 1400 7150
+Wire Wire Line
+	1400 7150 1500 7150
+Connection ~ 1400 7050
+Wire Wire Line
+	1400 7250 1500 7250
+Wire Wire Line
+	1400 7350 1400 7450
+Wire Wire Line
+	1500 7350 1400 7350
+Wire Wire Line
+	1400 6950 1400 7050
+Wire Wire Line
+	1500 7050 1400 7050
+Wire Notes Line
+	3800 6450 500  6450
+Wire Wire Line
+	2200 6100 2900 6100
+Wire Wire Line
+	2200 6000 2900 6000
+Wire Wire Line
+	2200 5900 2750 5900
+Wire Wire Line
+	2200 5800 2750 5800
+Wire Notes Line
+	500  5300 11200 5300
+Wire Notes Line
+	3800 3900 500  3900
+Wire Notes Line
+	3800 500  3800 7800
+Wire Wire Line
+	2800 4900 3350 4900
+Wire Wire Line
+	3350 4800 2800 4800
+Wire Wire Line
+	2800 4700 3350 4700
+Wire Wire Line
+	3350 4600 2800 4600
+Wire Wire Line
+	2800 4500 3350 4500
+Connection ~ 1250 4500
+Wire Wire Line
+	1250 4450 1250 4500
+Connection ~ 1450 4500
+Wire Wire Line
+	1450 4600 1450 4500
+Wire Wire Line
+	1550 4600 1450 4600
+Connection ~ 1450 4800
+Wire Wire Line
+	1550 4800 1450 4800
+Connection ~ 1450 4900
+Wire Wire Line
+	1450 4900 1550 4900
+Connection ~ 1450 5000
+Wire Wire Line
+	1450 4700 1450 4800
+Wire Wire Line
+	1550 4700 1450 4700
+Wire Wire Line
+	1250 4900 1250 5000
+Wire Wire Line
+	950  7350 950  7450
+Wire Wire Line
+	950  6950 950  7050
+Connection ~ 3450 1150
+Wire Wire Line
+	3200 1250 3200 2050
+Wire Wire Line
+	1300 1250 3200 1250
+Wire Wire Line
+	2950 1350 2950 2050
+Wire Wire Line
+	1300 1350 2950 1350
+Wire Wire Line
+	2700 1450 2700 2050
+Wire Wire Line
+	1300 1450 2700 1450
+Wire Wire Line
+	2450 1550 2450 2050
+Wire Wire Line
+	1300 1550 2450 1550
+Connection ~ 2150 1850
+Wire Wire Line
+	3450 2400 3450 2350
+Wire Wire Line
+	3200 2400 3200 2350
+Wire Wire Line
+	2950 2400 2950 2350
+Wire Wire Line
+	2150 2400 2150 2350
+Wire Wire Line
+	2700 2400 2700 2350
+Wire Wire Line
+	2450 2400 2450 2350
+Wire Wire Line
+	1950 2250 1300 2250
+Wire Wire Line
+	1300 2350 1950 2350
+Wire Wire Line
+	1950 2450 1300 2450
+Wire Wire Line
+	1300 2850 1950 2850
+Wire Wire Line
+	1300 2750 1950 2750
+Wire Wire Line
+	2150 1050 2150 1850
+Wire Wire Line
+	1300 1850 2150 1850
+Wire Wire Line
+	3450 1050 3450 1150
+Wire Wire Line
+	1300 1150 3450 1150
+Connection ~ 1400 3450
+Wire Wire Line
+	1400 3450 1300 3450
+Connection ~ 1400 3350
+Wire Wire Line
+	1400 3350 1300 3350
+Connection ~ 1400 3250
+Wire Wire Line
+	1400 3250 1300 3250
+Connection ~ 1400 3150
+Wire Wire Line
+	1400 3150 1300 3150
+Connection ~ 1400 3050
+Wire Wire Line
+	1400 3050 1300 3050
+Connection ~ 1400 2950
+Wire Wire Line
+	1400 2950 1300 2950
+Connection ~ 1400 2650
+Wire Wire Line
+	1400 2650 1300 2650
+Connection ~ 1400 2550
+Wire Wire Line
+	1400 2550 1300 2550
+Connection ~ 1400 2150
+Wire Wire Line
+	1400 2150 1300 2150
+Connection ~ 1400 2050
+Wire Wire Line
+	1400 2050 1300 2050
+Connection ~ 1400 1950
+Wire Wire Line
+	1400 1950 1300 1950
+Connection ~ 1400 1750
+Wire Wire Line
+	1300 1750 1400 1750
+Wire Wire Line
+	1400 1650 1400 1750
+Wire Wire Line
+	1300 1650 1400 1650
+$Comp
+L mini_ble:WHEEL_EVQWKA U19
+U 1 1 5B0068F8
+P 1800 5950
+F 0 "U19" H 1600 6200 60  0000 C CNN
+F 1 "WHEEL_SRBE210200" H 1800 5700 60  0000 C CNN
+F 2 "footprints:SRBE210200" H 1800 5950 60  0001 C CNN
+F 3 "" H 1800 5950 60  0001 C CNN
+	1    1800 5950
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR081
+U 1 1 5B0358E1
+P 1300 5950
+F 0 "#PWR081" H 1300 5700 50  0001 C CNN
+F 1 "GND" H 1300 5800 50  0000 C CNN
+F 2 "" H 1300 5950 50  0001 C CNN
+F 3 "" H 1300 5950 50  0001 C CNN
+	1    1300 5950
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	1350 5900 1300 5900
+Wire Wire Line
+	1300 5800 1300 5900
+Wire Wire Line
+	1350 5800 1300 5800
+Connection ~ 1300 5900
+Text HLabel 10400 4100 2    60   Output ~ 0
+NO_COMMS
+Text HLabel 10400 1500 2    60   Input ~ 0
+VOLED_DC_IN
+Wire Wire Line
+	10400 4100 9600 4100
+Wire Wire Line
+	9300 2900 10400 2900
+Wire Wire Line
+	9300 3000 10400 3000
+Wire Wire Line
+	10400 3100 9300 3100
+Wire Wire Line
+	9300 3200 10400 3200
+Wire Wire Line
+	10400 2800 9300 2800
+Wire Wire Line
+	9300 2700 10400 2700
+Wire Wire Line
+	10400 2600 9300 2600
+Wire Wire Line
+	9300 2500 10400 2500
+Wire Wire Line
+	5600 4000 4600 4000
+Wire Wire Line
+	4600 3900 5600 3900
+Text Notes 4150 3900 0    60   ~ 0
+SERCOM4
+Text Notes 4150 4000 0    60   ~ 0
+SERCOM4
+Text Notes 10550 3650 1    60   ~ 0
+~SERCOM3
+Wire Wire Line
+	10400 3700 9300 3700
+Wire Wire Line
+	9300 3800 10400 3800
+Text Notes 4150 4150 0    60   ~ 0
+SERCOM5
+Wire Wire Line
+	4600 3500 5600 3500
+Wire Wire Line
+	10400 3900 9300 3900
+Wire Wire Line
+	9300 4000 10400 4000
+Wire Wire Line
+	4600 3600 5600 3600
+Wire Wire Line
+	9300 1400 10400 1400
+Wire Wire Line
+	10400 1300 9300 1300
+Wire Wire Line
+	10400 1500 9300 1500
+Text Notes 10550 2050 1    60   ~ 0
+~SERCOM0
+Text Notes 10550 2500 1    60   ~ 0
+~SERCOM2
+Wire Wire Line
+	10400 2400 9300 2400
+Wire Wire Line
+	9300 2300 10400 2300
+Wire Wire Line
+	10400 2200 9300 2200
+Wire Wire Line
+	5600 3700 4600 3700
+Wire Wire Line
+	4600 3800 5600 3800
+Wire Wire Line
+	6250 5700 6800 5700
+Wire Wire Line
+	4600 7250 4600 7300
+Wire Wire Line
+	1250 5000 1250 5050
+Wire Wire Line
+	5250 3300 5600 3300
+Wire Wire Line
+	4100 1300 4100 1400
+Wire Wire Line
+	4700 1300 5450 1300
+Wire Wire Line
+	4400 1300 4700 1300
+Wire Wire Line
+	5450 1300 5600 1300
+Wire Wire Line
+	5450 1400 5450 1500
+Wire Wire Line
+	5450 2100 5450 2150
+Wire Wire Line
+	5500 5700 6250 5700
+Wire Wire Line
+	5800 7500 5800 7600
+Wire Wire Line
+	5800 6600 5900 6600
+Wire Wire Line
+	4950 6600 5800 6600
+Wire Wire Line
+	4150 6600 4150 6650
+Wire Wire Line
+	1400 7150 1400 7250
+Wire Wire Line
+	1400 7050 1400 7150
+Wire Wire Line
+	1250 4500 1250 4600
+Wire Wire Line
+	1450 4500 1550 4500
+Wire Wire Line
+	1450 4800 1450 4900
+Wire Wire Line
+	1450 4900 1450 5000
+Wire Wire Line
+	1450 5000 1550 5000
+Wire Wire Line
+	3450 1150 3450 2050
+Wire Wire Line
+	2150 1850 2150 2050
+Wire Wire Line
+	1400 3450 1400 3550
+Wire Wire Line
+	1400 3350 1400 3450
+Wire Wire Line
+	1400 3250 1400 3350
+Wire Wire Line
+	1400 3150 1400 3250
+Wire Wire Line
+	1400 3050 1400 3150
+Wire Wire Line
+	1400 2950 1400 3050
+Wire Wire Line
+	1400 2650 1400 2950
+Wire Wire Line
+	1400 2550 1400 2650
+Wire Wire Line
+	1400 2150 1400 2550
+Wire Wire Line
+	1400 2050 1400 2150
+Wire Wire Line
+	1400 1950 1400 2050
+Wire Wire Line
+	1400 1750 1400 1950
+Wire Wire Line
+	1300 5900 1300 5950
+$Comp
+L mini_ble:W25Q16 U16
+U 1 1 59DC3037
+P 9100 6050
+F 0 "U16" H 8900 6300 60  0000 C CNN
+F 1 "W25Q16" H 9100 5800 60  0000 C CNN
+F 2 "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm" H 9050 6100 60  0001 C CNN
+F 3 "" H 9050 6100 60  0001 C CNN
+F 4 "https://www.digikey.com/product-detail/en/winbond-electronics/W25Q16JVSNIQ/W25Q16JVSNIQ-ND/6193768" H 9100 6050 60  0001 C CNN "Field4"
+	1    9100 6050
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9550 6100 9600 6100
+Wire Wire Line
+	9600 6100 9600 6000
+Connection ~ 9600 5900
+Wire Wire Line
+	9550 6000 9600 6000
+Connection ~ 9600 6000
+Wire Wire Line
+	9600 6000 9600 5900
+$Comp
+L Device:R R27
+U 1 1 5D36D318
+P 9550 1000
+F 0 "R27" V 9630 1000 50  0000 C CNN
+F 1 "1M" V 9550 1000 50  0000 C CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" V 9480 1000 50  0001 C CNN
+F 3 "" H 9550 1000 50  0001 C CNN
+F 4 "https://www.digikey.com/product-detail/en/yageo/RC0402JR-071ML/311-1.0MJRCT-ND/729356" V 9550 1000 60  0001 C CNN "Field4"
+	1    9550 1000
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	9550 750  9550 850 
+Wire Wire Line
+	9550 1150 9550 1600
+Connection ~ 9550 1600
+Wire Wire Line
+	9550 1600 9300 1600
+$Comp
+L Device:D_Zener D3
+U 1 1 5E0377AC
+P 5500 6950
+F 0 "D3" H 5500 7050 50  0000 C CNN
+F 1 "Zener 3.3V" H 5550 6850 50  0000 C CNN
+F 2 "Diode_SMD:D_SOD-523" H 5500 6950 50  0001 C CNN
+F 3 "" H 5500 6950 50  0001 C CNN
+F 4 "https://www.digikey.com/product-detail/en/comchip-technology/CPDH3V3UP-HF/641-1486-1-ND/4171834" H 5500 6950 60  0001 C CNN "Field4"
+	1    5500 6950
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	4600 7700 3900 7700
+$Comp
+L power:GND #PWR0102
+U 1 1 5E0494E7
+P 5200 7600
+F 0 "#PWR0102" H 5200 7350 50  0001 C CNN
+F 1 "GND" H 5200 7450 50  0000 C CNN
+F 2 "" H 5200 7600 50  0001 C CNN
+F 3 "" H 5200 7600 50  0001 C CNN
+	1    5200 7600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5300 7550 5200 7550
+Wire Wire Line
+	5200 7550 5200 7600
+Wire Wire Line
+	5900 6800 5700 6800
+Wire Wire Line
+	5700 7300 5700 7550
+Wire Wire Line
+	5700 7550 5600 7550
+Wire Wire Line
+	5250 7300 5700 7300
+Wire Wire Line
+	5700 7300 5900 7300
+Connection ~ 5700 7300
+Wire Wire Line
+	5650 6950 5700 6950
+Wire Wire Line
+	5700 6950 5700 6800
+Connection ~ 5700 6800
+Wire Wire Line
+	5700 6800 5250 6800
+Wire Wire Line
+	5200 6950 5200 7550
+Connection ~ 5200 7550
+$Comp
+L Connector_Generic:Conn_02x05_Odd_Even J6
+U 1 1 5E1F0BCE
+P 10400 4800
+F 0 "J6" H 10450 5125 50  0000 C CNN
+F 1 "Conn_02x05_Odd_Even" H 10450 5126 50  0001 C CNN
+F 2 "footprints:SHF-105-01-X-D-TH" H 10400 4800 50  0001 C CNN
+F 3 "~" H 10400 4800 50  0001 C CNN
+F 4 "https://www.digikey.com/product-detail/en/cnc-tech/3220-10-0100-00/1175-1627-ND/3883661" H 10400 4800 50  0001 C CNN "Field4"
+	1    10400 4800
+	-1   0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0129
+U 1 1 5E1F220E
+P 10700 5100
+F 0 "#PWR0129" H 10700 4850 50  0001 C CNN
+F 1 "GND" H 10700 4950 50  0000 C CNN
+F 2 "" H 10700 5100 50  0001 C CNN
+F 3 "" H 10700 5100 50  0001 C CNN
+	1    10700 5100
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3.3V #PWR0130
+U 1 1 5E1F4635
+P 10700 4500
+F 0 "#PWR0130" H 10700 4350 50  0001 C CNN
+F 1 "+3.3V" H 10700 4640 50  0000 C CNN
+F 2 "" H 10700 4500 50  0001 C CNN
+F 3 "" H 10700 4500 50  0001 C CNN
+	1    10700 4500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	10600 4600 10700 4600
+Wire Wire Line
+	10700 4600 10700 4500
+Wire Wire Line
+	10600 4700 10700 4700
+Wire Wire Line
+	10700 4700 10700 4800
+Wire Wire Line
+	10600 4800 10700 4800
+Connection ~ 10700 4800
+Wire Wire Line
+	10700 4800 10700 5000
+Wire Wire Line
+	10600 5000 10700 5000
+Connection ~ 10700 5000
+Wire Wire Line
+	10700 5000 10700 5100
+NoConn ~ 10600 4900
+Wire Wire Line
+	10100 4700 9600 4700
+Wire Wire Line
+	9600 4700 9600 4100
+Connection ~ 9600 4100
+Wire Wire Line
+	9600 4100 9300 4100
+Wire Wire Line
+	10100 4600 9700 4600
+Wire Wire Line
+	9700 4600 9700 4200
+Wire Wire Line
+	9700 4200 9300 4200
+Text Notes 7800 4900 0    60   ~ 0
+no_comms unavailable when debugging,\ndetected by main MCU which then informs AUX
+Text Label 9600 5000 0    60   ~ 0
+~RST
+Wire Wire Line
+	10100 5000 9600 5000
+NoConn ~ 10100 4800
+NoConn ~ 10100 4900
+$Comp
+L Switch:SW_SPST SW4
+U 1 1 5E2AD420
+P 4100 1000
+F 0 "SW4" V 4054 1098 50  0000 L CNN
+F 1 "SW_SPST" V 4145 1098 50  0000 L CNN
+F 2 "footprints:DIP_1POS_KAE01LAGT" H 4100 1000 50  0001 C CNN
+F 3 "~" H 4100 1000 50  0001 C CNN
+F 4 "https://www.digikey.com/product-detail/en/e-switch/KAE01LAGT/EG5071-ND/4028201" V 4100 1000 50  0001 C CNN "Field4"
+	1    4100 1000
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	4100 800  4100 750 
+Wire Wire Line
+	9550 750  5450 750 
+Wire Wire Line
+	5450 750  5450 1300
+Wire Wire Line
+	5450 1500 5450 2100
+Connection ~ 5450 1500
+Wire Wire Line
+	5250 2100 5450 2100
+Wire Wire Line
+	5250 2100 5250 2950
+$Comp
+L Connector:TestPoint TP7
+U 1 1 5E32C2E8
+P 4200 750
+F 0 "TP7" V 4154 938 50  0000 L CNN
+F 1 "TestPoint" V 4245 938 50  0000 L CNN
+F 2 "footprints:TP_KEYSTONE_500X" H 4400 750 50  0001 C CNN
+F 3 "~" H 4400 750 50  0001 C CNN
+F 4 "https://www.digikey.com/product-detail/en/keystone-electronics/5006/36-5006-ND/255330" V 4200 750 50  0001 C CNN "Field4"
+	1    4200 750 
+	0    1    1    0   
+$EndComp
+$Comp
+L Connector:TestPoint TP8
+U 1 1 5E33DECD
+P 5350 750
+F 0 "TP8" V 5300 1050 50  0000 C CNN
+F 1 "TestPoint" V 5400 1150 50  0000 C CNN
+F 2 "footprints:TP_KEYSTONE_500X" H 5550 750 50  0001 C CNN
+F 3 "~" H 5550 750 50  0001 C CNN
+F 4 "https://www.digikey.com/product-detail/en/keystone-electronics/5006/36-5006-ND/255330" V 5350 750 50  0001 C CNN "Field4"
+	1    5350 750 
+	0    -1   1    0   
+$EndComp
+Wire Wire Line
+	4200 750  4100 750 
+Connection ~ 4100 750 
+Wire Wire Line
+	4100 750  4100 700 
+Wire Wire Line
+	5350 750  5450 750 
+Connection ~ 5450 750 
+$EndSCHEMATC

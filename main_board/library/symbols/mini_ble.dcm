@@ -1,0 +1,119 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP AP3015A
+D MICRO POWER STEP-UP DC-DC CONVERTER
+$ENDCMP
+#
+$CMP AT45DB011D
+D SPI Serial Flash Memory
+$ENDCMP
+#
+$CMP ATBTLC1000
+D ATBTLC1000 is an ultra-low power Bluetooth® SMART (BLE 4.1)
+K 4x4 QFN
+F http://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-42409-ATBTLC1000-QFN-SoC_Datasheet.pdf
+$ENDCMP
+#
+$CMP ATSAMD21E15B
+D QFN32, 16K Flash, 2K RAM, 48MHz, CortexM0+
+K ARM 32bit Microcontroller 48MHz CortexM0+
+F http://www.atmel.com/Images/Atmel-42129-SAM-D20_Datasheet.pdf
+$ENDCMP
+#
+$CMP CON_SMARTCARD2
+D smartcard connector
+$ENDCMP
+#
+$CMP CORTEX_DBG
+D Low Input Voltage, 0.7V Boost Converter With 5.5μA Quiescent Current
+$ENDCMP
+#
+$CMP Crystal_FA38_SMD
+D Two pin crystal
+K Quartz, Resonator, Ceramic, Filter
+$ENDCMP
+#
+$CMP FERRITE_BEAD
+D Ferrite Bead
+K Ferrite Bead
+$ENDCMP
+#
+$CMP IP4234CZ6,125
+D TVS DIODE 5.5VWM 6TSOP
+$ENDCMP
+#
+$CMP IP4234CZ6,125_ALT
+D TVS DIODE 5.5VWM 6TSOP
+$ENDCMP
+#
+$CMP LIS2HH12
+D MEMS digital output motion sensor
+$ENDCMP
+#
+$CMP LM2623
+D LM2623 General-Purpose, Gated-Oscillator-Based DC/DC Boost Converter
+$ENDCMP
+#
+$CMP LM3670
+D Miniature Step-Down DC-DC CConverter for Ultralow Voltage Circuits
+$ENDCMP
+#
+$CMP LT1613
+D 1.4MHz, Single Cell DC/DC Converter
+$ENDCMP
+#
+$CMP MAX40200
+D 1A Ideal Diode with Ultra-Low Voltage Drop
+$ENDCMP
+#
+$CMP MIC5504
+D Single 3V3 300mA LDO
+$ENDCMP
+#
+$CMP NC7SZ08P5X
+D IC GATE AND 1CH 2-INP SC-70-5
+$ENDCMP
+#
+$CMP OLED_M01084
+D 256x64 Grayscale OLED Screen
+$ENDCMP
+#
+$CMP SAMD20E15A-MU
+D QFN32, 32K Flash, 4K RAM, 48MHz, CortexM0+
+K ARM 32bit Microcontroller 48MHz CortexM0+
+$ENDCMP
+#
+$CMP SAMD20G18A-MU
+D QFN48, 256K Flash, 32K RAM, 48MHz, CortexM0+
+K ARM 32bit Microcontroller 48MHz CortexM0+
+F http://www.atmel.com/Images/Atmel-42129-SAM-D20_Datasheet.pdf
+$ENDCMP
+#
+$CMP SAMD21G18A-MU
+D QFN48, 16K Flash, 2K RAM, 48MHz, CortexM0+
+K ARM 32bit Microcontroller 48MHz CortexM0+
+F http://www.atmel.com/Images/Atmel-42129-SAM-D20_Datasheet.pdf
+$ENDCMP
+#
+$CMP Si3460DV
+D Transistor N-MOSFETwith substrate diode
+K NMOS n-mos n-mosfet transistor
+$ENDCMP
+#
+$CMP TPS61221
+D Low Input Voltage, 0.7V Boost Converter With 5.5μA Quiescent Current
+$ENDCMP
+#
+$CMP TS005_ENC_WHEEL_CLICK
+D TS005 wheel encoder with click
+$ENDCMP
+#
+$CMP W25Q16
+D 	IC FLASH 16MBIT 133MHZ
+$ENDCMP
+#
+$CMP WHEEL_EVQWKA
+D SIQ-02FVS1 Wheel
+$ENDCMP
+#
+#End Doc Library

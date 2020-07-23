@@ -1,0 +1,1767 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 4
+Title ""
+Date "2017-10-08"
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Sheet
+S 3400 6300 1450 800 
+U 59B3AA77
+F0 "Power Supplies" 60
+F1 "mini_ble_psu.sch" 60
+F2 "VOLED_1V2_EN" I R 4850 6400 60 
+F3 "VOLED_3V3_EN" I R 4850 6500 60 
+F4 "SWDET_ENABLE" I R 4850 6900 60 
+F5 "SWITCH_HIGH" I R 4850 6700 60 
+F6 "SWITCH_LOW" I R 4850 6800 60 
+F7 "3V3_USB" O R 4850 6600 60 
+F8 "BAT+" I L 3400 6400 60 
+F9 "VOLED_DC_IN" O R 4850 7000 60 
+$EndSheet
+$Sheet
+S 3400 3650 1500 2150
+U 59B3AA97
+F0 "Bluetooth and USB" 60
+F1 "mini_ble_usb.sch" 60
+F2 "AUX_Rx" I R 4900 4500 60 
+F3 "BLE_CHIP_SEC_EN" I R 4900 4400 60 
+F4 "AUX_Tx" O R 4900 4600 60 
+F5 "CURSENSE_LOW" I L 3400 5450 60 
+F6 "CURSENSE_HIGH" I L 3400 5050 60 
+F7 "MOS_CHARGE" I L 3400 5700 60 
+F8 "VFBBIAS" I L 3400 3850 60 
+F9 "CHARGE_EN" I L 3400 3750 60 
+F10 "NO_COMMS" I R 4900 4700 60 
+F11 "BLE_DBG_UART" I R 4900 4300 60 
+$EndSheet
+Text Notes 7200 6400 0    60   ~ 0
+Copyright Stephan Electronics, 2019\n\nThis documentation describes Open Hardware and is licensed under the\nCERN OHL v. 1.2.\n\nYou may redistribute and modify this documentation under the terms of the\nCERN OHL v.1.2. (http://ohwr.org/cernohl). This documentation is distributed\nWITHOUT ANY EXPRESS OR IMPLIED WARRANTY, INCLUDING OF MERCHANTABILITY,\nSATISFACTORY QUALITY AND FITNESS FOR A PARTICULAR PURPOSE. \nPlease see the CERN OHL v.1.2 for applicable conditions
+$Comp
+L Device:Battery_Cell BT1
+U 1 1 5AF24982
+P 2900 7150
+F 0 "BT1" H 3000 7250 50  0000 L CNN
+F 1 "NiMH" H 3000 7150 50  0000 L CNN
+F 2 "footprints:BAT_TWOTHIRD_AAA" V 2900 7210 50  0001 C CNN
+F 3 "" V 2900 7210 50  0001 C CNN
+	1    2900 7150
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR07
+U 1 1 5AF24CE3
+P 2900 7300
+F 0 "#PWR07" H 2900 7050 50  0001 C CNN
+F 1 "GND" H 2900 7150 50  0000 C CNN
+F 2 "" H 2900 7300 50  0001 C CNN
+F 3 "" H 2900 7300 50  0001 C CNN
+	1    2900 7300
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:Q_NMOS_GSD Q5
+U 1 1 5AF26FCB
+P 3000 5700
+F 0 "Q5" H 3200 5700 50  0000 L CNN
+F 1 "DMN1019USN" H 3200 5600 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SC-59" H 3200 5800 50  0001 C CNN
+F 3 "" H 3000 5700 50  0001 C CNN
+F 4 "https://www.digikey.com/product-detail/en/diodes-incorporated/DMN1019USN-7/DMN1019USN-7DICT-ND/4898886" H 3000 5700 60  0001 C CNN "Field4"
+	1    3000 5700
+	-1   0    0    -1  
+$EndComp
+$Sheet
+S 5300 4300 1250 2800
+U 59B3AAC5
+F0 "Main MCU & OLED" 60
+F1 "mini_ble_core.sch" 60
+F2 "VOLED_1V2_EN" O L 5300 6400 60 
+F3 "VOLED_3V3_EN" O L 5300 6500 60 
+F4 "3V3_USB" I L 5300 6600 60 
+F5 "SWITCH_HIGH" O L 5300 6700 60 
+F6 "SWITCH_LOW" O L 5300 6800 60 
+F7 "SWDET_ENABLE" O L 5300 6900 60 
+F8 "AUX_TX" I L 5300 4600 60 
+F9 "AUX_RX" O L 5300 4500 60 
+F10 "BLE_EN" O L 5300 4400 60 
+F11 "NO_COMMS" O L 5300 4700 60 
+F12 "VOLED_DC_IN" I L 5300 7000 60 
+$EndSheet
+$Comp
+L Device:R R9
+U 1 1 5AF292B6
+P 2900 5250
+F 0 "R9" V 2980 5250 50  0000 C CNN
+F 1 "1" V 2900 5250 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 2830 5250 50  0001 C CNN
+F 3 "" H 2900 5250 50  0001 C CNN
+F 4 "https://www.digikey.com/product-detail/en/stackpole-electronics-inc/RNCP0603FTD1R00/RNCP0603FTD1R00CT-ND/2240411" V 2900 5250 60  0001 C CNN "Field4"
+	1    2900 5250
+	1    0    0    -1  
+$EndComp
+$Comp
+L mini_ble:LM3670 U18
+U 1 1 5AF2FA11
+P 1900 4450
+F 0 "U18" H 1700 4650 60  0000 C CNN
+F 1 "LM3670" H 1900 4250 60  0000 C CNN
+F 2 "Package_TO_SOT_SMD:SOT-23-5" H 1900 4450 60  0001 C CNN
+F 3 "" H 1900 4450 60  0001 C CNN
+F 4 "https://www.digikey.com/product-detail/en/texas-instruments/LM3670MFX-ADJ-NOPB/LM3670MFX-ADJ-NOPBCT-ND/953510" H 1900 4450 60  0001 C CNN "Field4"
+	1    1900 4450
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR05
+U 1 1 5AF2FB56
+P 1400 4600
+F 0 "#PWR05" H 1400 4350 50  0001 C CNN
+F 1 "GND" H 1400 4450 50  0000 C CNN
+F 2 "" H 1400 4600 50  0001 C CNN
+F 3 "" H 1400 4600 50  0001 C CNN
+	1    1400 4600
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C29
+U 1 1 5AF30132
+P 800 4650
+F 0 "C29" H 825 4750 50  0000 L CNN
+F 1 "4.7uF" H 825 4550 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 838 4500 50  0001 C CNN
+F 3 "http://www.samsungsem.com/kr/support/product-search/mlcc/__icsFiles/afieldfile/2018/08/23/Data%20sheet_CL10A475KA8NQNC.pdf" H 800 4650 50  0001 C CNN
+F 4 "https://www.digikey.com/product-detail/en/samsung-electro-mechanics-america-inc/CL10A475KA8NQNC/1276-1900-1-ND/3889986" H 800 4650 60  0001 C CNN "Field4"
+	1    800  4650
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR02
+U 1 1 5AF30340
+P 800 4850
+F 0 "#PWR02" H 800 4600 50  0001 C CNN
+F 1 "GND" H 800 4700 50  0000 C CNN
+F 2 "" H 800 4850 50  0001 C CNN
+F 3 "" H 800 4850 50  0001 C CNN
+	1    800  4850
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+5V #PWR01
+U 1 1 5AF305D3
+P 800 4300
+F 0 "#PWR01" H 800 4150 50  0001 C CNN
+F 1 "+5V" H 800 4440 50  0000 C CNN
+F 2 "" H 800 4300 50  0001 C CNN
+F 3 "" H 800 4300 50  0001 C CNN
+	1    800  4300
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C49
+U 1 1 5AF31956
+P 2450 5250
+F 0 "C49" H 2300 5350 50  0000 L CNN
+F 1 "10uF/6.3V" V 2600 5000 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 2488 5100 50  0001 C CNN
+F 3 "" H 2450 5250 50  0001 C CNN
+F 4 "https://www.digikey.com/product-detail/en/murata-electronics-north-america/GRM188R60J106ME47D/490-3896-1-ND/965938" H 2450 5250 60  0001 C CNN "Field4"
+	1    2450 5250
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:L L6
+U 1 1 5AF327F1
+P 2450 4800
+F 0 "L6" V 2400 4800 50  0000 C CNN
+F 1 "4.7uH" V 2525 4800 50  0000 C CNN
+F 2 "Inductor_SMD:L_0805_2012Metric" H 2450 4800 50  0001 C CNN
+F 3 "" H 2450 4800 50  0001 C CNN
+F 4 "https://www.digikey.com/product-detail/en/murata-electronics-north-america/LQM2MPN4R7MG0L/490-12073-1-ND/5403074" V 2450 4800 60  0001 C CNN "Field4"
+	1    2450 4800
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:GND #PWR06
+U 1 1 5AF33A0F
+P 2450 5450
+F 0 "#PWR06" H 2450 5200 50  0001 C CNN
+F 1 "GND" H 2450 5300 50  0000 C CNN
+F 2 "" H 2450 5450 50  0001 C CNN
+F 3 "" H 2450 5450 50  0001 C CNN
+	1    2450 5450
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:Q_NMOS_GSD Q9
+U 1 1 5AF26F43
+P 3000 6150
+F 0 "Q9" H 3200 5950 50  0000 L CNN
+F 1 "DMN1019USN" H 3200 6050 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SC-59" H 3200 6250 50  0001 C CNN
+F 3 "" H 3000 6150 50  0001 C CNN
+F 4 "https://www.digikey.com/product-detail/en/diodes-incorporated/DMN1019USN-7/DMN1019USN-7DICT-ND/4898886" H 3000 6150 60  0001 C CNN "Field4"
+	1    3000 6150
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:R R15
+U 1 1 5AF35A49
+P 3550 6050
+F 0 "R15" V 3630 6050 50  0000 C CNN
+F 1 "100k" V 3550 6050 50  0000 C CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" V 3480 6050 50  0001 C CNN
+F 3 "" H 3550 6050 50  0001 C CNN
+F 4 "https://www.digikey.com/product-detail/en/yageo/AC0402FR-07100KL/YAG3434CT-ND/6006283" V 3550 6050 60  0001 C CNN "Field4"
+	1    3550 6050
+	0    1    1    0   
+$EndComp
+$Comp
+L power:GND #PWR08
+U 1 1 5AF35BA4
+P 3750 6050
+F 0 "#PWR08" H 3750 5800 50  0001 C CNN
+F 1 "GND" H 3750 5900 50  0000 C CNN
+F 2 "" H 3750 6050 50  0001 C CNN
+F 3 "" H 3750 6050 50  0001 C CNN
+	1    3750 6050
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:R R8
+U 1 1 5AF37CC3
+P 2900 4100
+F 0 "R8" V 2980 4100 50  0000 C CNN
+F 1 "20k" V 2900 4100 50  0000 C CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" V 2830 4100 50  0001 C CNN
+F 3 "" H 2900 4100 50  0001 C CNN
+F 4 "https://www.digikey.com/product-detail/en/yageo/RC0402FR-0720KL/311-20.0KLRCT-ND/729504" V 2900 4100 60  0001 C CNN "Field4"
+	1    2900 4100
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C51
+U 1 1 5AF37E38
+P 3150 4700
+F 0 "C51" H 3175 4800 50  0000 L CNN
+F 1 "C" H 3175 4600 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0402_1005Metric" H 3188 4550 50  0001 C CNN
+F 3 "" H 3150 4700 50  0001 C CNN
+	1    3150 4700
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R1
+U 1 1 5AF39200
+P 1200 4650
+F 0 "R1" V 1280 4650 50  0000 C CNN
+F 1 "100k" V 1200 4650 50  0000 C CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" V 1130 4650 50  0001 C CNN
+F 3 "" H 1200 4650 50  0001 C CNN
+F 4 "https://www.digikey.com/product-detail/en/yageo/AC0402FR-07100KL/YAG3434CT-ND/6006283" V 1200 4650 60  0001 C CNN "Field4"
+	1    1200 4650
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:GND #PWR04
+U 1 1 5AF39301
+P 1200 4850
+F 0 "#PWR04" H 1200 4600 50  0001 C CNN
+F 1 "GND" H 1200 4700 50  0000 C CNN
+F 2 "" H 1200 4850 50  0001 C CNN
+F 3 "" H 1200 4850 50  0001 C CNN
+	1    1200 4850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1200 4800 1200 4850
+Wire Wire Line
+	1200 3750 1200 4450
+Wire Wire Line
+	1450 4450 1200 4450
+Connection ~ 2900 4350
+Wire Wire Line
+	3150 4250 3150 4350
+Connection ~ 3150 5050
+Wire Wire Line
+	3150 5050 3150 4850
+Wire Wire Line
+	2900 4250 2900 4350
+Wire Wire Line
+	2350 4350 2900 4350
+Wire Wire Line
+	2450 4550 2350 4550
+Wire Wire Line
+	2450 4650 2450 4550
+Connection ~ 2450 5050
+Connection ~ 2900 5050
+Wire Wire Line
+	2900 4850 2900 5050
+Connection ~ 2900 5450
+Wire Wire Line
+	2900 5400 2900 5450
+Wire Wire Line
+	3400 5450 2900 5450
+Wire Wire Line
+	3700 6050 3750 6050
+Connection ~ 3300 6050
+Wire Wire Line
+	3400 6050 3300 6050
+Connection ~ 3300 5700
+Wire Wire Line
+	2900 6350 2900 6400
+Wire Wire Line
+	3200 5700 3300 5700
+Wire Wire Line
+	3300 5700 3300 6050
+Wire Wire Line
+	3300 6150 3200 6150
+Wire Wire Line
+	2450 4950 2450 5050
+Wire Wire Line
+	2450 5050 2900 5050
+Wire Wire Line
+	2450 5450 2450 5400
+Wire Wire Line
+	800  4350 1450 4350
+Connection ~ 800  4350
+Wire Wire Line
+	800  4300 800  4350
+Wire Wire Line
+	800  4850 800  4800
+Wire Wire Line
+	1400 4550 1400 4600
+Wire Wire Line
+	1450 4550 1400 4550
+Wire Wire Line
+	2900 5950 2900 5900
+Wire Wire Line
+	2900 7250 2900 7300
+Wire Wire Line
+	5300 6800 4850 6800
+Wire Wire Line
+	5300 6900 4850 6900
+Wire Wire Line
+	4850 6700 5300 6700
+Wire Wire Line
+	5300 6600 4850 6600
+Wire Wire Line
+	5300 6500 4850 6500
+Wire Wire Line
+	4850 6400 5300 6400
+Wire Wire Line
+	3400 6400 2900 6400
+$Comp
+L Device:R R7
+U 1 1 5AF3C2C3
+P 2900 4700
+F 0 "R7" V 2980 4700 50  0000 C CNN
+F 1 "54k9" V 2900 4700 50  0000 C CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" V 2830 4700 50  0001 C CNN
+F 3 "" H 2900 4700 50  0001 C CNN
+F 4 "https://www.digikey.com/product-detail/en/yageo/RC0402FR-0754K9L/YAG3185CT-ND/5282050" V 2900 4700 60  0001 C CNN "Field4"
+	1    2900 4700
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C50
+U 1 1 5AF3C4BD
+P 3150 4100
+F 0 "C50" H 3175 4200 50  0000 L CNN
+F 1 "C" H 3175 4000 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0402_1005Metric" H 3188 3950 50  0001 C CNN
+F 3 "" H 3150 4100 50  0001 C CNN
+	1    3150 4100
+	1    0    0    -1  
+$EndComp
+Connection ~ 3150 4350
+Wire Wire Line
+	2900 3950 2900 3850
+Wire Wire Line
+	2900 3850 3150 3850
+Wire Wire Line
+	3150 3950 3150 3850
+Connection ~ 3150 3850
+Wire Wire Line
+	3400 3750 1200 3750
+Connection ~ 1200 4450
+Wire Wire Line
+	4900 4400 5300 4400
+Wire Wire Line
+	5300 4500 5100 4500
+Wire Wire Line
+	4900 4600 5200 4600
+Text Notes 1650 4800 0    60   ~ 0
+350mA max
+Text Notes 2000 4200 0    60   ~ 0
+Vout set to 1.8V\n1.5V + 0.3A*1R
+Text Notes 3050 5300 0    60   ~ 0
+0.1W
+Wire Wire Line
+	4900 4700 5300 4700
+Wire Wire Line
+	4850 7000 5300 7000
+Wire Wire Line
+	2900 4350 2900 4550
+Wire Wire Line
+	2900 4350 3150 4350
+Wire Wire Line
+	3150 5050 3400 5050
+Wire Wire Line
+	2450 5050 2450 5100
+Wire Wire Line
+	2900 5050 2900 5100
+Wire Wire Line
+	2900 5050 3150 5050
+Wire Wire Line
+	2900 5450 2900 5500
+Wire Wire Line
+	3300 6050 3300 6150
+Wire Wire Line
+	3300 5700 3400 5700
+Wire Wire Line
+	800  4350 800  4500
+Wire Wire Line
+	3150 4350 3150 4550
+Wire Wire Line
+	3150 3850 3400 3850
+Wire Wire Line
+	1200 4450 1200 4500
+$Comp
+L Switch:SW_SPST SW1
+U 1 1 5E0D0DA5
+P 2900 6650
+F 0 "SW1" V 2900 6562 50  0000 R CNN
+F 1 "SW_SPST" V 2855 6562 50  0001 R CNN
+F 2 "footprints:DIP_1POS_KAE01LAGT" H 2900 6650 50  0001 C CNN
+F 3 "~" H 2900 6650 50  0001 C CNN
+F 4 "https://www.digikey.com/product-detail/en/e-switch/KAE01LAGT/EG5071-ND/4028201" V 2900 6650 50  0001 C CNN "Field4"
+	1    2900 6650
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	2900 6450 2900 6400
+Connection ~ 2900 6400
+Wire Wire Line
+	2900 6950 2900 6900
+Wire Wire Line
+	4900 4300 5000 4300
+Wire Wire Line
+	5000 4300 5000 3450
+Wire Wire Line
+	5100 3450 5100 4500
+Connection ~ 5100 4500
+Wire Wire Line
+	5100 4500 4900 4500
+Wire Wire Line
+	5200 3450 5200 4600
+Connection ~ 5200 4600
+Wire Wire Line
+	5200 4600 5300 4600
+$Comp
+L Connector:TestPoint TP1
+U 1 1 5E1DBA46
+P 2700 6400
+F 0 "TP1" V 2700 6700 50  0000 C CNN
+F 1 "TestPoint" V 2804 6472 50  0001 C CNN
+F 2 "footprints:TP_KEYSTONE_500X" H 2900 6400 50  0001 C CNN
+F 3 "~" H 2900 6400 50  0001 C CNN
+F 4 "https://www.digikey.com/product-detail/en/keystone-electronics/5006/36-5006-ND/255330" V 2700 6400 50  0001 C CNN "Field4"
+	1    2700 6400
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Connector:TestPoint TP2
+U 1 1 5E1DC492
+P 2700 6900
+F 0 "TP2" V 2700 7200 50  0000 C CNN
+F 1 "TestPoint" V 2804 6972 50  0001 C CNN
+F 2 "footprints:TP_KEYSTONE_500X" H 2900 6900 50  0001 C CNN
+F 3 "~" H 2900 6900 50  0001 C CNN
+F 4 "https://www.digikey.com/product-detail/en/keystone-electronics/5006/36-5006-ND/255330" V 2700 6900 50  0001 C CNN "Field4"
+	1    2700 6900
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	2700 6900 2900 6900
+Connection ~ 2900 6900
+Wire Wire Line
+	2900 6900 2900 6850
+Wire Wire Line
+	2900 6400 2700 6400
+$Comp
+L Device:C_Small C?
+U 1 1 5E414DF3
+P 4250 1600
+AR Path="/59B3AA97/5E414DF3" Ref="C?"  Part="1" 
+AR Path="/5E414DF3" Ref="C59"  Part="1" 
+F 0 "C59" H 4400 1650 50  0000 L CNN
+F 1 "1uF/25V" H 4400 1550 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 4250 1600 60  0001 C CNN
+F 3 "https://media.digikey.com/pdf/Data%20Sheets/Samsung%20PDFs/CL10B105KA8NNNC_char.pdf" H 4250 1600 60  0001 C CNN
+F 4 "https://www.digikey.com/product-detail/en/samsung-electro-mechanics-america-inc/CL10B105KA8NNNC/1276-1184-1-ND/3889270" H 4250 1600 60  0001 C CNN "Field4"
+	1    4250 1600
+	1    0    0    -1  
+$EndComp
+$Comp
+L mini_ble:IP4234CZ6,125_ALT U?
+U 1 1 5E414DFA
+P 3050 2050
+AR Path="/59B3AA97/5E414DFA" Ref="U?"  Part="1" 
+AR Path="/5E414DFA" Ref="U21"  Part="1" 
+F 0 "U21" H 2750 2250 60  0000 C CNN
+F 1 "IP4234CZ6,125" H 3050 1850 60  0000 C CNN
+F 2 "Package_SO:TSOP-6_1.65x3.05mm_P0.95mm" H 3150 2350 60  0001 C CNN
+F 3 "" H 3150 2350 60  0000 C CNN
+F 4 "https://www.digikey.com/product-detail/en/nexperia-usa-inc/IP4234CZ6125/1727-4717-1-ND/2531156" H 3050 2050 60  0001 C CNN "Field4"
+	1    3050 2050
+	-1   0    0    -1  
+$EndComp
+$Comp
+L mini_ble:FERRITE_BEAD FB?
+U 1 1 5E414E01
+P 4050 1350
+AR Path="/59B3AA97/5E414E01" Ref="FB?"  Part="1" 
+AR Path="/5E414E01" Ref="FB3"  Part="1" 
+F 0 "FB3" V 4000 1300 50  0000 L BNN
+F 1 "FER" V 4050 1300 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 4050 1350 60  0001 C CNN
+F 3 "" H 4050 1350 60  0000 C CNN
+F 4 "https://www.digikey.com/product-detail/en/murata-electronics-north-america/BLM18AG601SN1D/490-1014-1-ND/584462" V 4050 1350 60  0001 C CNN "Field4"
+	1    4050 1350
+	0    -1   1    0   
+$EndComp
+$Comp
+L Device:C_Small C?
+U 1 1 5E414E08
+P 3050 1550
+AR Path="/59B3AA97/5E414E08" Ref="C?"  Part="1" 
+AR Path="/5E414E08" Ref="C21"  Part="1" 
+F 0 "C21" H 3150 1600 50  0000 L CNN
+F 1 "100nF" H 3150 1500 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 3050 1550 60  0001 C CNN
+F 3 "" H 3050 1550 60  0001 C CNN
+F 4 "https://www.digikey.com/product-detail/en/samsung-electro-mechanics-america-inc/CL10B104KB8NNNC/1276-1000-1-ND/3889086" H 3050 1550 60  0001 C CNN "Field4"
+	1    3050 1550
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5E414E0E
+P 2400 2200
+AR Path="/59B3AA97/5E414E0E" Ref="#PWR?"  Part="1" 
+AR Path="/5E414E0E" Ref="#PWR0103"  Part="1" 
+F 0 "#PWR0103" H 2400 1950 50  0001 C CNN
+F 1 "GND" H 2400 2050 50  0000 C CNN
+F 2 "" H 2400 2200 60  0000 C CNN
+F 3 "" H 2400 2200 60  0000 C CNN
+	1    2400 2200
+	-1   0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5E414E22
+P 4250 1750
+AR Path="/59B3AA97/5E414E22" Ref="#PWR?"  Part="1" 
+AR Path="/5E414E22" Ref="#PWR0131"  Part="1" 
+F 0 "#PWR0131" H 4250 1500 50  0001 C CNN
+F 1 "GND" H 4250 1600 50  0000 C CNN
+F 2 "" H 4250 1750 60  0000 C CNN
+F 3 "" H 4250 1750 60  0000 C CNN
+	1    4250 1750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3950 1350 3800 1350
+Wire Wire Line
+	4250 1750 4250 1700
+Wire Wire Line
+	2400 2200 2400 2150
+Wire Wire Line
+	2400 2150 2450 2150
+Wire Wire Line
+	3800 1350 3800 1950
+Wire Wire Line
+	3800 1950 3700 1950
+Wire Wire Line
+	4150 1350 4250 1350
+$Comp
+L Connector:USB_C_Receptacle_USB2.0 U?
+U 1 1 5E414E33
+P 1600 1950
+AR Path="/59B3AA97/5E414E33" Ref="U?"  Part="1" 
+AR Path="/5E414E33" Ref="U20"  Part="1" 
+F 0 "U20" H 1707 2817 50  0000 C CNN
+F 1 "USBC_Receptacle" H 1707 2726 50  0000 C CNN
+F 2 "footprints:USB_C_Receptacle_GT-USB-7010" H 1600 1950 50  0001 C CIN
+F 3 " " H 1600 1950 50  0001 C CNN
+	1    1600 1950
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5E414E39
+P 1300 3050
+AR Path="/59B3AA97/5E414E39" Ref="#PWR?"  Part="1" 
+AR Path="/5E414E39" Ref="#PWR0132"  Part="1" 
+F 0 "#PWR0132" H 1300 2800 50  0001 C CNN
+F 1 "GND" H 1300 2900 50  0000 C CNN
+F 2 "" H 1300 3050 60  0000 C CNN
+F 3 "" H 1300 3050 60  0000 C CNN
+	1    1300 3050
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1300 2850 1300 2950
+Wire Wire Line
+	1300 2950 1600 2950
+Wire Wire Line
+	1600 2950 1600 2850
+Connection ~ 1300 2950
+Wire Wire Line
+	1300 2950 1300 3050
+NoConn ~ 2200 2450
+NoConn ~ 2200 2550
+$Comp
+L Device:R R?
+U 1 1 5E414E47
+P 2500 1650
+AR Path="/59B3AA97/5E414E47" Ref="R?"  Part="1" 
+AR Path="/5E414E47" Ref="R29"  Part="1" 
+F 0 "R29" V 2550 1900 50  0000 C CNN
+F 1 "5.1k" V 2500 1650 50  0000 C CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" V 2430 1650 50  0001 C CNN
+F 3 "~" H 2500 1650 50  0001 C CNN
+F 4 "https://www.digikey.com/product-detail/en/yageo/RC0402FR-075K1L/311-5.10KLRCT-ND/729571" H -6800 -400 50  0001 C CNN "Field4"
+	1    2500 1650
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	2200 1650 2350 1650
+$Comp
+L Device:R R?
+U 1 1 5E414E4F
+P 2500 1550
+AR Path="/59B3AA97/5E414E4F" Ref="R?"  Part="1" 
+AR Path="/5E414E4F" Ref="R28"  Part="1" 
+F 0 "R28" V 2550 1800 50  0000 C CNN
+F 1 "5.1k" V 2500 1550 50  0000 C CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" V 2430 1550 50  0001 C CNN
+F 3 "~" H 2500 1550 50  0001 C CNN
+F 4 "https://www.digikey.com/product-detail/en/yageo/RC0402FR-075K1L/311-5.10KLRCT-ND/729571" H -6800 -400 50  0001 C CNN "Field4"
+	1    2500 1550
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	2200 1550 2350 1550
+$Comp
+L power:GND #PWR?
+U 1 1 5E414E56
+P 2750 1700
+AR Path="/59B3AA97/5E414E56" Ref="#PWR?"  Part="1" 
+AR Path="/5E414E56" Ref="#PWR0133"  Part="1" 
+F 0 "#PWR0133" H 2750 1450 50  0001 C CNN
+F 1 "GND" H 2750 1550 50  0000 C CNN
+F 2 "" H 2750 1700 60  0000 C CNN
+F 3 "" H 2750 1700 60  0000 C CNN
+	1    2750 1700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2650 1650 2750 1650
+Wire Wire Line
+	2750 1650 2750 1700
+Wire Wire Line
+	2650 1550 2750 1550
+Wire Wire Line
+	2750 1550 2750 1650
+Connection ~ 2750 1650
+$Comp
+L power:GND #PWR?
+U 1 1 5E414E61
+P 3050 1700
+AR Path="/59B3AA97/5E414E61" Ref="#PWR?"  Part="1" 
+AR Path="/5E414E61" Ref="#PWR0134"  Part="1" 
+F 0 "#PWR0134" H 3050 1450 50  0001 C CNN
+F 1 "GND" H 3050 1550 50  0000 C CNN
+F 2 "" H 3050 1700 60  0000 C CNN
+F 3 "" H 3050 1700 60  0000 C CNN
+	1    3050 1700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3050 1700 3050 1650
+Wire Wire Line
+	2200 1350 3050 1350
+Wire Wire Line
+	3050 1350 3050 1450
+Wire Wire Line
+	2200 1850 2300 1850
+Wire Wire Line
+	2300 1850 2300 1950
+Wire Wire Line
+	2300 1950 2200 1950
+Connection ~ 2300 1950
+Wire Wire Line
+	2200 2050 2300 2050
+Wire Wire Line
+	2300 2050 2300 2150
+Wire Wire Line
+	2300 2150 2200 2150
+Connection ~ 2300 2050
+Wire Wire Line
+	2300 2050 2450 2050
+Wire Wire Line
+	2300 1950 2450 1950
+Wire Wire Line
+	3050 1350 3800 1350
+Connection ~ 3050 1350
+Connection ~ 3800 1350
+$Comp
+L mini_ble:MIC5504 U?
+U 1 1 5E41C35F
+P 5400 1450
+AR Path="/59B3AA77/5E41C35F" Ref="U?"  Part="1" 
+AR Path="/5E41C35F" Ref="U22"  Part="1" 
+F 0 "U22" H 5200 1650 60  0000 C CNN
+F 1 "MIC5504" H 5400 1250 60  0000 C CNN
+F 2 "Package_TO_SOT_SMD:SOT-23-5" H 5500 1750 60  0001 C CNN
+F 3 "" H 5500 1750 60  0001 C CNN
+F 4 "https://www.digikey.com/product-detail/en/microchip-technology/MIC5504-3.3YM5-TR/576-4764-1-ND/4864028" H 5400 1450 60  0001 C CNN "Field4"
+	1    5400 1450
+	1    0    0    -1  
+$EndComp
+NoConn ~ 5850 1550
+$Comp
+L power:GND #PWR?
+U 1 1 5E41C366
+P 4850 1650
+AR Path="/59B3AA77/5E41C366" Ref="#PWR?"  Part="1" 
+AR Path="/5E41C366" Ref="#PWR0135"  Part="1" 
+F 0 "#PWR0135" H 4850 1400 50  0001 C CNN
+F 1 "GND" H 4850 1500 50  0000 C CNN
+F 2 "" H 4850 1650 50  0001 C CNN
+F 3 "" H 4850 1650 50  0001 C CNN
+	1    4850 1650
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4850 1350 4850 1450
+Wire Wire Line
+	4850 1450 4950 1450
+Connection ~ 4850 1350
+Wire Wire Line
+	4850 1650 4850 1550
+Wire Wire Line
+	4850 1550 4950 1550
+Wire Wire Line
+	5850 1350 5900 1350
+Wire Wire Line
+	4850 1350 4950 1350
+$Comp
+L power:GND #PWR0136
+U 1 1 5E4296A7
+P 8250 5100
+F 0 "#PWR0136" H 8250 4850 50  0001 C CNN
+F 1 "GND" H 8250 4950 50  0000 C CNN
+F 2 "" H 8250 5100 50  0001 C CNN
+F 3 "" H 8250 5100 50  0001 C CNN
+	1    8250 5100
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0137
+U 1 1 5E429FBC
+P 8450 5100
+F 0 "#PWR0137" H 8450 4850 50  0001 C CNN
+F 1 "GND" H 8450 4950 50  0000 C CNN
+F 2 "" H 8450 5100 50  0001 C CNN
+F 3 "" H 8450 5100 50  0001 C CNN
+	1    8450 5100
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0138
+U 1 1 5E42A10A
+P 8550 5100
+F 0 "#PWR0138" H 8550 4850 50  0001 C CNN
+F 1 "GND" H 8550 4950 50  0000 C CNN
+F 2 "" H 8550 5100 50  0001 C CNN
+F 3 "" H 8550 5100 50  0001 C CNN
+	1    8550 5100
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0139
+U 1 1 5E42A2EE
+P 8650 5100
+F 0 "#PWR0139" H 8650 4850 50  0001 C CNN
+F 1 "GND" H 8650 4950 50  0000 C CNN
+F 2 "" H 8650 5100 50  0001 C CNN
+F 3 "" H 8650 5100 50  0001 C CNN
+	1    8650 5100
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0140
+U 1 1 5E42A4D3
+P 8750 5100
+F 0 "#PWR0140" H 8750 4850 50  0001 C CNN
+F 1 "GND" H 8750 4950 50  0000 C CNN
+F 2 "" H 8750 5100 50  0001 C CNN
+F 3 "" H 8750 5100 50  0001 C CNN
+	1    8750 5100
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0141
+U 1 1 5E42A620
+P 8850 5100
+F 0 "#PWR0141" H 8850 4850 50  0001 C CNN
+F 1 "GND" H 8850 4950 50  0000 C CNN
+F 2 "" H 8850 5100 50  0001 C CNN
+F 3 "" H 8850 5100 50  0001 C CNN
+	1    8850 5100
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0142
+U 1 1 5E42A7B2
+P 9050 5100
+F 0 "#PWR0142" H 9050 4850 50  0001 C CNN
+F 1 "GND" H 9050 4950 50  0000 C CNN
+F 2 "" H 9050 5100 50  0001 C CNN
+F 3 "" H 9050 5100 50  0001 C CNN
+	1    9050 5100
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0143
+U 1 1 5E42A92B
+P 8950 5100
+F 0 "#PWR0143" H 8950 4850 50  0001 C CNN
+F 1 "GND" H 8950 4950 50  0000 C CNN
+F 2 "" H 8950 5100 50  0001 C CNN
+F 3 "" H 8950 5100 50  0001 C CNN
+	1    8950 5100
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0144
+U 1 1 5E42AA27
+P 9150 5100
+F 0 "#PWR0144" H 9150 4850 50  0001 C CNN
+F 1 "GND" H 9150 4950 50  0000 C CNN
+F 2 "" H 9150 5100 50  0001 C CNN
+F 3 "" H 9150 5100 50  0001 C CNN
+	1    9150 5100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8250 5100 8250 5050
+Wire Wire Line
+	8450 5050 8450 5100
+Wire Wire Line
+	8550 5100 8550 5050
+Wire Wire Line
+	8650 5050 8650 5100
+Wire Wire Line
+	8750 5050 8750 5100
+Wire Wire Line
+	8850 5100 8850 5050
+Wire Wire Line
+	8950 5050 8950 5100
+Wire Wire Line
+	9050 5100 9050 5050
+Wire Wire Line
+	9150 5050 9150 5100
+$Comp
+L power:GND #PWR0145
+U 1 1 5E44BFEC
+P 7550 4850
+F 0 "#PWR0145" H 7550 4600 50  0001 C CNN
+F 1 "GND" H 7550 4700 50  0000 C CNN
+F 2 "" H 7550 4850 50  0001 C CNN
+F 3 "" H 7550 4850 50  0001 C CNN
+	1    7550 4850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7650 4750 7550 4750
+Wire Wire Line
+	7550 4750 7550 4850
+NoConn ~ 7650 3650
+NoConn ~ 7650 3750
+NoConn ~ 7650 3850
+Text Notes 6450 3800 0    60   ~ 0
+No EEPROM, defaults to\nquad USB to UART
+NoConn ~ 10050 4650
+NoConn ~ 10050 4750
+Wire Wire Line
+	4250 1350 4250 1500
+Wire Wire Line
+	7250 2550 7650 2550
+$Comp
+L Device:R R31
+U 1 1 5E49E8D7
+P 7450 3000
+F 0 "R31" H 7381 2954 50  0000 R CNN
+F 1 "12K" H 7381 3045 50  0000 R CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" V 7380 3000 50  0001 C CNN
+F 3 "~" H 7450 3000 50  0001 C CNN
+F 4 "https://www.digikey.com/product-detail/en/yageo/RC0402FR-0712KL/311-12.0KLRCT-ND/729479" H 7450 3000 50  0001 C CNN "Field4"
+	1    7450 3000
+	1    0    0    1   
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5E49FC72
+P 7450 3200
+AR Path="/59B3AA97/5E49FC72" Ref="#PWR?"  Part="1" 
+AR Path="/5E49FC72" Ref="#PWR0146"  Part="1" 
+F 0 "#PWR0146" H 7450 2950 50  0001 C CNN
+F 1 "GND" H 7450 3050 50  0000 C CNN
+F 2 "" H 7450 3200 60  0000 C CNN
+F 3 "" H 7450 3200 60  0000 C CNN
+	1    7450 3200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7650 2350 7450 2350
+Wire Wire Line
+	7450 2350 7450 2850
+Wire Wire Line
+	7450 3150 7450 3200
+Wire Wire Line
+	4250 1350 4850 1350
+Connection ~ 4250 1350
+$Comp
+L Device:C C64
+U 1 1 5E4E54DF
+P 6050 1550
+F 0 "C64" H 6075 1650 50  0000 L CNN
+F 1 "1uF/25V" H 6075 1450 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 6088 1400 50  0001 C CNN
+F 3 "https://media.digikey.com/pdf/Data%20Sheets/Samsung%20PDFs/CL10B105KA8NNNC_char.pdf" H 6050 1550 50  0001 C CNN
+F 4 "https://www.digikey.com/product-detail/en/samsung-electro-mechanics-america-inc/CL10B105KA8NNNC/1276-1184-1-ND/3889270" H 6050 1550 60  0001 C CNN "Field4"
+	1    6050 1550
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0147
+U 1 1 5E4E54E5
+P 6050 1750
+F 0 "#PWR0147" H 6050 1500 50  0001 C CNN
+F 1 "GND" H 6050 1600 50  0000 C CNN
+F 2 "" H 6050 1750 50  0001 C CNN
+F 3 "" H 6050 1750 50  0001 C CNN
+	1    6050 1750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6050 1750 6050 1700
+Wire Wire Line
+	6050 1400 6050 1350
+$Comp
+L Device:R R30
+U 1 1 5E4EE18B
+P 7250 1700
+F 0 "R30" H 7180 1654 50  0000 R CNN
+F 1 "1k" H 7180 1745 50  0000 R CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" V 7180 1700 50  0001 C CNN
+F 3 "~" H 7250 1700 50  0001 C CNN
+F 4 "https://www.digikey.com/product-detail/en/yageo/RC0402FR-071KL/311-1.00KLRCT-ND/729460" H 7250 1700 50  0001 C CNN "Field4"
+	1    7250 1700
+	1    0    0    1   
+$EndComp
+Wire Wire Line
+	6050 1350 6550 1350
+Wire Wire Line
+	7250 1350 7250 1550
+Connection ~ 6050 1350
+Wire Wire Line
+	7250 1850 7250 2550
+$Comp
+L Device:C_Small C?
+U 1 1 5E0EABC4
+P 6550 1550
+AR Path="/59B3AA97/5E0EABC4" Ref="C?"  Part="1" 
+AR Path="/5E0EABC4" Ref="C67"  Part="1" 
+F 0 "C67" H 6650 1600 50  0000 L CNN
+F 1 "100nF" H 6650 1500 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 6550 1550 60  0001 C CNN
+F 3 "" H 6550 1550 60  0001 C CNN
+F 4 "https://www.digikey.com/product-detail/en/samsung-electro-mechanics-america-inc/CL10B104KB8NNNC/1276-1000-1-ND/3889086" H 6550 1550 60  0001 C CNN "Field4"
+	1    6550 1550
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0148
+U 1 1 5E0EC4EA
+P 6550 1750
+F 0 "#PWR0148" H 6550 1500 50  0001 C CNN
+F 1 "GND" H 6550 1600 50  0000 C CNN
+F 2 "" H 6550 1750 50  0001 C CNN
+F 3 "" H 6550 1750 50  0001 C CNN
+	1    6550 1750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6550 1750 6550 1650
+Wire Wire Line
+	6550 1450 6550 1350
+Connection ~ 6550 1350
+Wire Wire Line
+	6550 1350 7250 1350
+Wire Wire Line
+	7650 1050 7250 1050
+Wire Wire Line
+	7250 1050 7250 1350
+Connection ~ 7250 1350
+$Comp
+L Device:C C72
+U 1 1 5E0FA4F7
+P 7550 1500
+F 0 "C72" H 7575 1600 50  0000 L CNN
+F 1 "4.7uF" H 7575 1400 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 7588 1350 50  0001 C CNN
+F 3 "http://www.samsungsem.com/kr/support/product-search/mlcc/__icsFiles/afieldfile/2018/08/23/Data%20sheet_CL10A475KA8NQNC.pdf" H 7550 1500 50  0001 C CNN
+F 4 "https://www.digikey.com/product-detail/en/samsung-electro-mechanics-america-inc/CL10A475KA8NQNC/1276-1900-1-ND/3889986" H 7550 1500 60  0001 C CNN "Field4"
+	1    7550 1500
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0149
+U 1 1 5E0FB891
+P 7550 1750
+F 0 "#PWR0149" H 7550 1500 50  0001 C CNN
+F 1 "GND" H 7550 1600 50  0000 C CNN
+F 2 "" H 7550 1750 50  0001 C CNN
+F 3 "" H 7550 1750 50  0001 C CNN
+	1    7550 1750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7550 1750 7550 1650
+Wire Wire Line
+	7650 1250 7550 1250
+Wire Wire Line
+	7550 1250 7550 1350
+Wire Wire Line
+	8850 750  8850 700 
+Wire Wire Line
+	8850 700  8750 700 
+Wire Wire Line
+	7550 700  7550 1250
+Connection ~ 7550 1250
+Wire Wire Line
+	8750 750  8750 700 
+Connection ~ 8750 700 
+Wire Wire Line
+	8750 700  8650 700 
+Wire Wire Line
+	8650 750  8650 700 
+Connection ~ 8650 700 
+Wire Wire Line
+	8650 700  7550 700 
+$Comp
+L power:+1V8 #PWR0150
+U 1 1 5E115A41
+P 8850 700
+F 0 "#PWR0150" H 8850 550 50  0001 C CNN
+F 1 "+1V8" H 8865 873 50  0000 C CNN
+F 2 "" H 8850 700 50  0001 C CNN
+F 3 "" H 8850 700 50  0001 C CNN
+	1    8850 700 
+	1    0    0    -1  
+$EndComp
+Connection ~ 8850 700 
+$Comp
+L power:+1V8 #PWR0151
+U 1 1 5E1169C6
+P 3600 2700
+F 0 "#PWR0151" H 3600 2550 50  0001 C CNN
+F 1 "+1V8" H 3615 2873 50  0000 C CNN
+F 2 "" H 3600 2700 50  0001 C CNN
+F 3 "" H 3600 2700 50  0001 C CNN
+	1    3600 2700
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C_Small C?
+U 1 1 5E117402
+P 3600 2800
+AR Path="/59B3AA97/5E117402" Ref="C?"  Part="1" 
+AR Path="/5E117402" Ref="C52"  Part="1" 
+F 0 "C52" H 3700 2850 50  0000 L CNN
+F 1 "100nF" H 3700 2750 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 3600 2800 60  0001 C CNN
+F 3 "" H 3600 2800 60  0001 C CNN
+F 4 "https://www.digikey.com/product-detail/en/samsung-electro-mechanics-america-inc/CL10B104KB8NNNC/1276-1000-1-ND/3889086" H 3600 2800 60  0001 C CNN "Field4"
+	1    3600 2800
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5E11D974
+P 3600 2900
+AR Path="/59B3AA97/5E11D974" Ref="#PWR?"  Part="1" 
+AR Path="/5E11D974" Ref="#PWR0152"  Part="1" 
+F 0 "#PWR0152" H 3600 2650 50  0001 C CNN
+F 1 "GND" H 3600 2750 50  0000 C CNN
+F 2 "" H 3600 2900 60  0000 C CNN
+F 3 "" H 3600 2900 60  0000 C CNN
+	1    3600 2900
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+1V8 #PWR0153
+U 1 1 5E11F5D8
+P 4050 2700
+F 0 "#PWR0153" H 4050 2550 50  0001 C CNN
+F 1 "+1V8" H 4065 2873 50  0000 C CNN
+F 2 "" H 4050 2700 50  0001 C CNN
+F 3 "" H 4050 2700 50  0001 C CNN
+	1    4050 2700
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C_Small C?
+U 1 1 5E11F5DF
+P 4050 2800
+AR Path="/59B3AA97/5E11F5DF" Ref="C?"  Part="1" 
+AR Path="/5E11F5DF" Ref="C53"  Part="1" 
+F 0 "C53" H 4150 2850 50  0000 L CNN
+F 1 "100nF" H 4150 2750 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 4050 2800 60  0001 C CNN
+F 3 "" H 4050 2800 60  0001 C CNN
+F 4 "https://www.digikey.com/product-detail/en/samsung-electro-mechanics-america-inc/CL10B104KB8NNNC/1276-1000-1-ND/3889086" H 4050 2800 60  0001 C CNN "Field4"
+	1    4050 2800
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5E11F5E5
+P 4050 2900
+AR Path="/59B3AA97/5E11F5E5" Ref="#PWR?"  Part="1" 
+AR Path="/5E11F5E5" Ref="#PWR0154"  Part="1" 
+F 0 "#PWR0154" H 4050 2650 50  0001 C CNN
+F 1 "GND" H 4050 2750 50  0000 C CNN
+F 2 "" H 4050 2900 60  0000 C CNN
+F 3 "" H 4050 2900 60  0000 C CNN
+	1    4050 2900
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+1V8 #PWR0155
+U 1 1 5E125714
+P 3150 2700
+F 0 "#PWR0155" H 3150 2550 50  0001 C CNN
+F 1 "+1V8" H 3165 2873 50  0000 C CNN
+F 2 "" H 3150 2700 50  0001 C CNN
+F 3 "" H 3150 2700 50  0001 C CNN
+	1    3150 2700
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C_Small C?
+U 1 1 5E12571B
+P 3150 2800
+AR Path="/59B3AA97/5E12571B" Ref="C?"  Part="1" 
+AR Path="/5E12571B" Ref="C23"  Part="1" 
+F 0 "C23" H 3250 2850 50  0000 L CNN
+F 1 "100nF" H 3250 2750 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 3150 2800 60  0001 C CNN
+F 3 "" H 3150 2800 60  0001 C CNN
+F 4 "https://www.digikey.com/product-detail/en/samsung-electro-mechanics-america-inc/CL10B104KB8NNNC/1276-1000-1-ND/3889086" H 3150 2800 60  0001 C CNN "Field4"
+	1    3150 2800
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5E125721
+P 3150 2900
+AR Path="/59B3AA97/5E125721" Ref="#PWR?"  Part="1" 
+AR Path="/5E125721" Ref="#PWR0156"  Part="1" 
+F 0 "#PWR0156" H 3150 2650 50  0001 C CNN
+F 1 "GND" H 3150 2750 50  0000 C CNN
+F 2 "" H 3150 2900 60  0000 C CNN
+F 3 "" H 3150 2900 60  0000 C CNN
+	1    3150 2900
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3.3VP #PWR0157
+U 1 1 5E138E03
+P 7250 950
+F 0 "#PWR0157" H 7400 900 50  0001 C CNN
+F 1 "+3.3VP" H 7270 1093 50  0000 C CNN
+F 2 "" H 7250 950 50  0001 C CNN
+F 3 "" H 7250 950 50  0001 C CNN
+	1    7250 950 
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3.3VP #PWR0158
+U 1 1 5E13EB93
+P 9350 650
+F 0 "#PWR0158" H 9500 600 50  0001 C CNN
+F 1 "+3.3VP" H 9370 793 50  0000 C CNN
+F 2 "" H 9350 650 50  0001 C CNN
+F 3 "" H 9350 650 50  0001 C CNN
+	1    9350 650 
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9350 650  9350 700 
+Wire Wire Line
+	9350 700  9250 700 
+Wire Wire Line
+	9050 700  9050 750 
+Connection ~ 9350 700 
+Wire Wire Line
+	9350 700  9350 750 
+Wire Wire Line
+	9150 750  9150 700 
+Connection ~ 9150 700 
+Wire Wire Line
+	9150 700  9050 700 
+Wire Wire Line
+	9250 750  9250 700 
+Connection ~ 9250 700 
+Wire Wire Line
+	9250 700  9150 700 
+$Comp
+L power:+3.3VP #PWR0159
+U 1 1 5E15E7AE
+P 4550 2650
+F 0 "#PWR0159" H 4700 2600 50  0001 C CNN
+F 1 "+3.3VP" H 4570 2793 50  0000 C CNN
+F 2 "" H 4550 2650 50  0001 C CNN
+F 3 "" H 4550 2650 50  0001 C CNN
+	1    4550 2650
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C_Small C?
+U 1 1 5E15EE9A
+P 4550 2800
+AR Path="/59B3AA97/5E15EE9A" Ref="C?"  Part="1" 
+AR Path="/5E15EE9A" Ref="C60"  Part="1" 
+F 0 "C60" H 4650 2850 50  0000 L CNN
+F 1 "100nF" H 4650 2750 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 4550 2800 60  0001 C CNN
+F 3 "" H 4550 2800 60  0001 C CNN
+F 4 "https://www.digikey.com/product-detail/en/samsung-electro-mechanics-america-inc/CL10B104KB8NNNC/1276-1000-1-ND/3889086" H 4550 2800 60  0001 C CNN "Field4"
+	1    4550 2800
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5E15F31A
+P 4550 2900
+AR Path="/59B3AA97/5E15F31A" Ref="#PWR?"  Part="1" 
+AR Path="/5E15F31A" Ref="#PWR0160"  Part="1" 
+F 0 "#PWR0160" H 4550 2650 50  0001 C CNN
+F 1 "GND" H 4550 2750 50  0000 C CNN
+F 2 "" H 4550 2900 60  0000 C CNN
+F 3 "" H 4550 2900 60  0000 C CNN
+	1    4550 2900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4550 2700 4550 2650
+$Comp
+L power:+3.3VP #PWR0161
+U 1 1 5E166F72
+P 5000 2650
+F 0 "#PWR0161" H 5150 2600 50  0001 C CNN
+F 1 "+3.3VP" H 5020 2793 50  0000 C CNN
+F 2 "" H 5000 2650 50  0001 C CNN
+F 3 "" H 5000 2650 50  0001 C CNN
+	1    5000 2650
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C_Small C?
+U 1 1 5E166F79
+P 5000 2800
+AR Path="/59B3AA97/5E166F79" Ref="C?"  Part="1" 
+AR Path="/5E166F79" Ref="C61"  Part="1" 
+F 0 "C61" H 5100 2850 50  0000 L CNN
+F 1 "100nF" H 5100 2750 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 5000 2800 60  0001 C CNN
+F 3 "" H 5000 2800 60  0001 C CNN
+F 4 "https://www.digikey.com/product-detail/en/samsung-electro-mechanics-america-inc/CL10B104KB8NNNC/1276-1000-1-ND/3889086" H 5000 2800 60  0001 C CNN "Field4"
+	1    5000 2800
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5E166F7F
+P 5000 2900
+AR Path="/59B3AA97/5E166F7F" Ref="#PWR?"  Part="1" 
+AR Path="/5E166F7F" Ref="#PWR0162"  Part="1" 
+F 0 "#PWR0162" H 5000 2650 50  0001 C CNN
+F 1 "GND" H 5000 2750 50  0000 C CNN
+F 2 "" H 5000 2900 60  0000 C CNN
+F 3 "" H 5000 2900 60  0000 C CNN
+	1    5000 2900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5000 2700 5000 2650
+$Comp
+L power:+3.3VP #PWR0163
+U 1 1 5E16DC9F
+P 5450 2650
+F 0 "#PWR0163" H 5600 2600 50  0001 C CNN
+F 1 "+3.3VP" H 5470 2793 50  0000 C CNN
+F 2 "" H 5450 2650 50  0001 C CNN
+F 3 "" H 5450 2650 50  0001 C CNN
+	1    5450 2650
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C_Small C?
+U 1 1 5E16DCA6
+P 5450 2800
+AR Path="/59B3AA97/5E16DCA6" Ref="C?"  Part="1" 
+AR Path="/5E16DCA6" Ref="C62"  Part="1" 
+F 0 "C62" H 5550 2850 50  0000 L CNN
+F 1 "100nF" H 5550 2750 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 5450 2800 60  0001 C CNN
+F 3 "" H 5450 2800 60  0001 C CNN
+F 4 "https://www.digikey.com/product-detail/en/samsung-electro-mechanics-america-inc/CL10B104KB8NNNC/1276-1000-1-ND/3889086" H 5450 2800 60  0001 C CNN "Field4"
+	1    5450 2800
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5E16DCAC
+P 5450 2900
+AR Path="/59B3AA97/5E16DCAC" Ref="#PWR?"  Part="1" 
+AR Path="/5E16DCAC" Ref="#PWR0164"  Part="1" 
+F 0 "#PWR0164" H 5450 2650 50  0001 C CNN
+F 1 "GND" H 5450 2750 50  0000 C CNN
+F 2 "" H 5450 2900 60  0000 C CNN
+F 3 "" H 5450 2900 60  0000 C CNN
+	1    5450 2900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5450 2700 5450 2650
+$Comp
+L power:+3.3VP #PWR0165
+U 1 1 5E174178
+P 5900 2650
+F 0 "#PWR0165" H 6050 2600 50  0001 C CNN
+F 1 "+3.3VP" H 5920 2793 50  0000 C CNN
+F 2 "" H 5900 2650 50  0001 C CNN
+F 3 "" H 5900 2650 50  0001 C CNN
+	1    5900 2650
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C_Small C?
+U 1 1 5E17417F
+P 5900 2800
+AR Path="/59B3AA97/5E17417F" Ref="C?"  Part="1" 
+AR Path="/5E17417F" Ref="C63"  Part="1" 
+F 0 "C63" H 6000 2850 50  0000 L CNN
+F 1 "100nF" H 6000 2750 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 5900 2800 60  0001 C CNN
+F 3 "" H 5900 2800 60  0001 C CNN
+F 4 "https://www.digikey.com/product-detail/en/samsung-electro-mechanics-america-inc/CL10B104KB8NNNC/1276-1000-1-ND/3889086" H 5900 2800 60  0001 C CNN "Field4"
+	1    5900 2800
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5E174185
+P 5900 2900
+AR Path="/59B3AA97/5E174185" Ref="#PWR?"  Part="1" 
+AR Path="/5E174185" Ref="#PWR0166"  Part="1" 
+F 0 "#PWR0166" H 5900 2650 50  0001 C CNN
+F 1 "GND" H 5900 2750 50  0000 C CNN
+F 2 "" H 5900 2900 60  0000 C CNN
+F 3 "" H 5900 2900 60  0000 C CNN
+	1    5900 2900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5900 2700 5900 2650
+Wire Wire Line
+	7250 1050 7250 950 
+Connection ~ 7250 1050
+$Comp
+L Device:C C65
+U 1 1 5E18C87B
+P 6350 950
+F 0 "C65" H 6375 1050 50  0000 L CNN
+F 1 "4.7uF" V 6400 700 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 6388 800 50  0001 C CNN
+F 3 "http://www.samsungsem.com/kr/support/product-search/mlcc/__icsFiles/afieldfile/2018/08/23/Data%20sheet_CL10A475KA8NQNC.pdf" H 6350 950 50  0001 C CNN
+F 4 "https://www.digikey.com/product-detail/en/samsung-electro-mechanics-america-inc/CL10A475KA8NQNC/1276-1900-1-ND/3889986" H 6350 950 60  0001 C CNN "Field4"
+	1    6350 950 
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C66
+U 1 1 5E18D7BE
+P 6550 950
+F 0 "C66" H 6575 1050 50  0000 L CNN
+F 1 "4.7uF" V 6600 700 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 6588 800 50  0001 C CNN
+F 3 "http://www.samsungsem.com/kr/support/product-search/mlcc/__icsFiles/afieldfile/2018/08/23/Data%20sheet_CL10A475KA8NQNC.pdf" H 6550 950 50  0001 C CNN
+F 4 "https://www.digikey.com/product-detail/en/samsung-electro-mechanics-america-inc/CL10A475KA8NQNC/1276-1900-1-ND/3889986" H 6550 950 60  0001 C CNN "Field4"
+	1    6550 950 
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C_Small C?
+U 1 1 5E18DB97
+P 6750 950
+AR Path="/59B3AA97/5E18DB97" Ref="C?"  Part="1" 
+AR Path="/5E18DB97" Ref="C68"  Part="1" 
+F 0 "C68" H 6800 1050 50  0000 L CNN
+F 1 "100nF" V 6800 700 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 6750 950 60  0001 C CNN
+F 3 "" H 6750 950 60  0001 C CNN
+F 4 "https://www.digikey.com/product-detail/en/samsung-electro-mechanics-america-inc/CL10B104KB8NNNC/1276-1000-1-ND/3889086" H 6750 950 60  0001 C CNN "Field4"
+	1    6750 950 
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C_Small C?
+U 1 1 5E18E2AE
+P 6950 950
+AR Path="/59B3AA97/5E18E2AE" Ref="C?"  Part="1" 
+AR Path="/5E18E2AE" Ref="C69"  Part="1" 
+F 0 "C69" H 7000 1050 50  0000 L CNN
+F 1 "100nF" V 7000 700 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 6950 950 60  0001 C CNN
+F 3 "" H 6950 950 60  0001 C CNN
+F 4 "https://www.digikey.com/product-detail/en/samsung-electro-mechanics-america-inc/CL10B104KB8NNNC/1276-1000-1-ND/3889086" H 6950 950 60  0001 C CNN "Field4"
+	1    6950 950 
+	1    0    0    -1  
+$EndComp
+$Comp
+L mini_ble:FERRITE_BEAD FB?
+U 1 1 5E18E75F
+P 6050 1000
+AR Path="/59B3AA97/5E18E75F" Ref="FB?"  Part="1" 
+AR Path="/5E18E75F" Ref="FB5"  Part="1" 
+F 0 "FB5" V 6000 950 50  0000 L BNN
+F 1 "FER" V 6050 950 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 6050 1000 60  0001 C CNN
+F 3 "" H 6050 1000 60  0000 C CNN
+F 4 "https://www.digikey.com/product-detail/en/murata-electronics-north-america/BLM18AG601SN1D/490-1014-1-ND/584462" V 6050 1000 60  0001 C CNN "Field4"
+	1    6050 1000
+	1    0    0    1   
+$EndComp
+$Comp
+L mini_ble:FERRITE_BEAD FB?
+U 1 1 5E18F386
+P 5900 1000
+AR Path="/59B3AA97/5E18F386" Ref="FB?"  Part="1" 
+AR Path="/5E18F386" Ref="FB4"  Part="1" 
+F 0 "FB4" V 5850 950 50  0000 L BNN
+F 1 "FER" V 5900 950 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 5900 1000 60  0001 C CNN
+F 3 "" H 5900 1000 60  0000 C CNN
+F 4 "https://www.digikey.com/product-detail/en/murata-electronics-north-america/BLM18AG601SN1D/490-1014-1-ND/584462" V 5900 1000 60  0001 C CNN "Field4"
+	1    5900 1000
+	1    0    0    1   
+$EndComp
+Wire Wire Line
+	6050 1100 6050 1350
+Wire Wire Line
+	5900 1350 5900 1100
+Connection ~ 5900 1350
+Wire Wire Line
+	5900 1350 6050 1350
+Wire Wire Line
+	8450 750  8450 500 
+Wire Wire Line
+	8450 500  6950 500 
+Wire Wire Line
+	5900 500  5900 900 
+Wire Wire Line
+	8350 750  8350 600 
+Wire Wire Line
+	8350 600  6750 600 
+Wire Wire Line
+	6050 600  6050 900 
+$Comp
+L power:GND #PWR0167
+U 1 1 5E1AAA61
+P 6350 1150
+F 0 "#PWR0167" H 6350 900 50  0001 C CNN
+F 1 "GND" H 6350 1000 50  0000 C CNN
+F 2 "" H 6350 1150 50  0001 C CNN
+F 3 "" H 6350 1150 50  0001 C CNN
+	1    6350 1150
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0168
+U 1 1 5E1AAF00
+P 6550 1150
+F 0 "#PWR0168" H 6550 900 50  0001 C CNN
+F 1 "GND" H 6550 1000 50  0000 C CNN
+F 2 "" H 6550 1150 50  0001 C CNN
+F 3 "" H 6550 1150 50  0001 C CNN
+	1    6550 1150
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0169
+U 1 1 5E1AB1C5
+P 6750 1150
+F 0 "#PWR0169" H 6750 900 50  0001 C CNN
+F 1 "GND" H 6750 1000 50  0000 C CNN
+F 2 "" H 6750 1150 50  0001 C CNN
+F 3 "" H 6750 1150 50  0001 C CNN
+	1    6750 1150
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0170
+U 1 1 5E1AB5DE
+P 6950 1150
+F 0 "#PWR0170" H 6950 900 50  0001 C CNN
+F 1 "GND" H 6950 1000 50  0000 C CNN
+F 2 "" H 6950 1150 50  0001 C CNN
+F 3 "" H 6950 1150 50  0001 C CNN
+	1    6950 1150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6350 800  6350 600 
+Connection ~ 6350 600 
+Wire Wire Line
+	6350 600  6050 600 
+Wire Wire Line
+	6550 800  6550 500 
+Connection ~ 6550 500 
+Wire Wire Line
+	6550 500  5900 500 
+Wire Wire Line
+	6750 850  6750 600 
+Connection ~ 6750 600 
+Wire Wire Line
+	6750 600  6350 600 
+Wire Wire Line
+	6950 850  6950 500 
+Connection ~ 6950 500 
+Wire Wire Line
+	6950 500  6550 500 
+Wire Wire Line
+	6350 1150 6350 1100
+Wire Wire Line
+	6550 1100 6550 1150
+Wire Wire Line
+	6750 1150 6750 1050
+Wire Wire Line
+	6950 1050 6950 1150
+Wire Wire Line
+	3700 2150 7650 2150
+Wire Wire Line
+	3700 2050 7650 2050
+$Comp
+L Device:C C71
+U 1 1 5E1F94DC
+P 7100 4550
+F 0 "C71" V 7150 4750 50  0000 C CNN
+F 1 "27pF" V 7150 4400 50  0000 C CNN
+F 2 "Capacitor_SMD:C_0402_1005Metric" H 7138 4400 50  0001 C CNN
+F 3 "~" H 7100 4550 50  0001 C CNN
+F 4 "https://www.digikey.com/product-detail/en/yageo/CC0402JRNPO9BN270/311-1019-1-ND/302936" V 7100 4550 50  0001 C CNN "Field4"
+	1    7100 4550
+	0    -1   -1   0   
+$EndComp
+$Comp
+L power:GND #PWR0171
+U 1 1 5E1FAA45
+P 6850 4850
+F 0 "#PWR0171" H 6850 4600 50  0001 C CNN
+F 1 "GND" H 6850 4700 50  0000 C CNN
+F 2 "" H 6850 4850 50  0001 C CNN
+F 3 "" H 6850 4850 50  0001 C CNN
+	1    6850 4850
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C70
+U 1 1 5E1FBB36
+P 7100 4150
+F 0 "C70" V 7150 4350 50  0000 C CNN
+F 1 "27pF" V 7150 4000 50  0000 C CNN
+F 2 "Capacitor_SMD:C_0402_1005Metric" H 7138 4000 50  0001 C CNN
+F 3 "~" H 7100 4150 50  0001 C CNN
+F 4 "https://www.digikey.com/product-detail/en/yageo/CC0402JRNPO9BN270/311-1019-1-ND/302936" V 7100 4150 50  0001 C CNN "Field4"
+	1    7100 4150
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	6950 4150 6850 4150
+Wire Wire Line
+	6850 4150 6850 4350
+Wire Wire Line
+	6950 4550 6850 4550
+Connection ~ 6850 4550
+Wire Wire Line
+	6850 4550 6850 4850
+Wire Wire Line
+	7650 4550 7450 4550
+Connection ~ 7450 4550
+Wire Wire Line
+	7450 4550 7250 4550
+Wire Wire Line
+	7650 4150 7450 4150
+Connection ~ 7450 4150
+Wire Wire Line
+	7450 4150 7250 4150
+Text Label 5000 3450 3    60   ~ 0
+BLE_DBG_UART
+Text Label 5100 3450 3    60   ~ 0
+AUX_RX
+Text Label 5200 3450 3    60   ~ 0
+AUX_TX
+Text Label 10800 4700 1    60   ~ 0
+BLE_DBG_UART
+Text Label 10950 4700 1    60   ~ 0
+AUX_RX
+Text Label 11100 4700 1    60   ~ 0
+AUX_TX
+$Comp
+L Switch:SW_SPST SW5
+U 1 1 5E24BCB2
+P 10350 1150
+F 0 "SW5" H 10350 1293 50  0000 C CNN
+F 1 "SW_SPST" H 10350 1294 50  0001 C CNN
+F 2 "footprints:DIP_1POS_KAE01LAGT" H 10350 1150 50  0001 C CNN
+F 3 "~" H 10350 1150 50  0001 C CNN
+F 4 "https://www.digikey.com/product-detail/en/e-switch/KAE01LAGT/EG5071-ND/4028201" H 10350 1150 50  0001 C CNN "Field4"
+	1    10350 1150
+	1    0    0    -1  
+$EndComp
+$Comp
+L Switch:SW_SPST SW6
+U 1 1 5E25D074
+P 10350 2050
+F 0 "SW6" H 10350 2193 50  0000 C CNN
+F 1 "SW_SPST" H 10350 2194 50  0001 C CNN
+F 2 "footprints:DIP_1POS_KAE01LAGT" H 10350 2050 50  0001 C CNN
+F 3 "~" H 10350 2050 50  0001 C CNN
+F 4 "https://www.digikey.com/product-detail/en/e-switch/KAE01LAGT/EG5071-ND/4028201" H 10350 2050 50  0001 C CNN "Field4"
+	1    10350 2050
+	1    0    0    -1  
+$EndComp
+$Comp
+L Switch:SW_SPST SW7
+U 1 1 5E25D86D
+P 10350 2950
+F 0 "SW7" H 10350 3093 50  0000 C CNN
+F 1 "SW_SPST" H 10350 3094 50  0001 C CNN
+F 2 "footprints:DIP_1POS_KAE01LAGT" H 10350 2950 50  0001 C CNN
+F 3 "~" H 10350 2950 50  0001 C CNN
+F 4 "https://www.digikey.com/product-detail/en/e-switch/KAE01LAGT/EG5071-ND/4028201" H 10350 2950 50  0001 C CNN "Field4"
+	1    10350 2950
+	1    0    0    -1  
+$EndComp
+$Comp
+L Switch:SW_SPST SW8
+U 1 1 5E2932E3
+P 10350 3850
+F 0 "SW8" H 10350 3993 50  0000 C CNN
+F 1 "SW_SPST" H 10350 3994 50  0001 C CNN
+F 2 "footprints:DIP_1POS_KAE01LAGT" H 10350 3850 50  0001 C CNN
+F 3 "~" H 10350 3850 50  0001 C CNN
+F 4 "https://www.digikey.com/product-detail/en/e-switch/KAE01LAGT/EG5071-ND/4028201" H 10350 3850 50  0001 C CNN "Field4"
+	1    10350 3850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	10150 3850 10050 3850
+Wire Wire Line
+	10050 2950 10150 2950
+Wire Wire Line
+	10050 2050 10150 2050
+Wire Wire Line
+	10150 1150 10050 1150
+Wire Wire Line
+	10550 1150 11100 1150
+Wire Wire Line
+	11100 1150 11100 4700
+Wire Wire Line
+	10550 2050 10950 2050
+Wire Wire Line
+	10950 2050 10950 4700
+Wire Wire Line
+	10550 2950 10800 2950
+Wire Wire Line
+	10800 2950 10800 4700
+Wire Wire Line
+	10550 3850 10650 3850
+Wire Wire Line
+	10650 3850 10650 4700
+$Comp
+L mini_ble:FT4232H_PAD U23
+U 1 1 5E28D1E0
+P 8850 2950
+F 0 "U23" H 8850 3850 50  0000 C CNN
+F 1 "FT4232H_PAD" H 8900 3750 50  0000 C CNN
+F 2 "Package_DFN_QFN:QFN-64-1EP_9x9mm_P0.5mm_EP4.35x4.35mm" H 8850 2950 50  0001 C CNN
+F 3 "https://www.ftdichip.com/Support/Documents/DataSheets/ICs/DS_FT4232H.pdf" H 8850 2950 50  0001 C CNN
+F 4 "https://www.digikey.com/product-detail/en/ftdi-future-technology-devices-international-ltd/FT4232HQ-REEL/768-1027-1-ND/1986060" H 8850 2950 50  0001 C CNN "Field4"
+	1    8850 2950
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0173
+U 1 1 5E2923BA
+P 9300 5100
+F 0 "#PWR0173" H 9300 4850 50  0001 C CNN
+F 1 "GND" H 9300 4950 50  0000 C CNN
+F 2 "" H 9300 5100 50  0001 C CNN
+F 3 "" H 9300 5100 50  0001 C CNN
+	1    9300 5100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9300 5100 9300 5050
+$Comp
+L Device:Crystal_GND24_Small Y3
+U 1 1 5E18A569
+P 7450 4350
+F 0 "Y3" V 7404 4494 50  0000 L CNN
+F 1 "12MHz" V 7495 4494 50  0000 L CNN
+F 2 "Crystal:Crystal_SMD_2520-4Pin_2.5x2.0mm" H 7450 4350 50  0001 C CNN
+F 3 "~" H 7450 4350 50  0001 C CNN
+F 4 "https://www.digikey.com/product-detail/en/txc-corporation/8Z-12.000MAAJ-T/887-1487-1-ND/2627055" V 7450 4350 50  0001 C CNN "Field4"
+	1    7450 4350
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	7450 4450 7450 4550
+Wire Wire Line
+	7450 4150 7450 4250
+Wire Wire Line
+	7550 4350 7350 4350
+Wire Wire Line
+	7350 4350 6850 4350
+Connection ~ 7350 4350
+Connection ~ 6850 4350
+Wire Wire Line
+	6850 4350 6850 4550
+$EndSCHEMATC

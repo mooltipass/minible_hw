@@ -1,0 +1,3 @@
+(sym_lib_table
+  (lib (name mini_ble)(type Legacy)(uri ${KIPRJMOD}/library/symbols/mini_ble.lib)(options "")(descr ""))
+)
